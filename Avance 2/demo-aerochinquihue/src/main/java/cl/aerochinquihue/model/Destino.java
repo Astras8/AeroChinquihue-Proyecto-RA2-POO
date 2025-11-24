@@ -10,4 +10,12 @@ public class Destino {
         this.PrecioTransporte = PrecioTransporte;
         this.PrecioEncomiendaKg = PrecioEncomiendaKg;
     }
+
+    // getters
+    public double getPrecioTransporte() {
+        return PrecioTransporte;
+    }
+    public double getPrecioEncomiendaKg() {
+        return PrecioEncomiendaKg;
+    }
 }
