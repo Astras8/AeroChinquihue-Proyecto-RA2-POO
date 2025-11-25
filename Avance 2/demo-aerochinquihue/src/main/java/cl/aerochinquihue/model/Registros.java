@@ -1,8 +1,9 @@
 package cl.aerochinquihue.model;
 
+import java.util.ArrayList;
 public class Registros {
-    private Vuelo[] Vuelos;
-    private Servicio[] Servicios;
+    private ArrayList<Vuelo> Vuelos;
+    private ArrayList<Servicio> Servicios;
 
     public double calcularVentasDiarias(){
         return 1;

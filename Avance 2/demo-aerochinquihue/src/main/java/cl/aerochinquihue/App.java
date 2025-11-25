@@ -1,5 +1,6 @@
 package cl.aerochinquihue;
 
+// JavaFX
 import cl.aerochinquihue.model.Avion;
 import cl.aerochinquihue.model.Destino;
 import javafx.application.Application;

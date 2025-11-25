@@ -4,8 +4,8 @@ public class Transporte extends Servicio {
     private Asiento AsientoElegido;
     private Cliente Pasajero;
 
-    public Transporte(Asiento AsientoElegido, Cliente Pasajero, int ID, Vuelo VueloAsignado, String MedioPago, Fecha FechaReserva) {
-        super(ID, VueloAsignado, MedioPago, FechaReserva);
+    public Transporte(Asiento AsientoElegido, Cliente Pasajero, Fecha FechaReserva) {
+        super(FechaReserva);
         this.AsientoElegido = AsientoElegido;
         this.Pasajero = Pasajero;
     }

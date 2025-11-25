@@ -8,4 +8,8 @@ public class Asiento {
     public Asiento(int Designacion){
         this.Designacion = Designacion;
     }
+
+    public boolean comprobarAsiento(){
+        return (this.Pasajero != null);
+    }
 }

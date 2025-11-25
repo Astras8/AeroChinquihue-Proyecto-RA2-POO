@@ -15,4 +15,16 @@ public abstract class Avion {
         this.PesoMaximo = PesoMaximo;
         this.DesignacionSerie = DesignacionSerie;
     }
+
+    public int getAsientosTotales(){
+        int NumeroAsientos = 0;
+        for (int i = 0; i < AsientosTotales.length; i++) {
+            NumeroAsientos++;
+        }
+        return NumeroAsientos;
+    }
+
+    public double getPesoMaximo() {
+        return PesoMaximo;
+    }
 }

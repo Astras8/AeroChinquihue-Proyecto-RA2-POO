@@ -6,8 +6,8 @@ public class Encomienda extends Servicio{
     private String Remitente;
     private boolean EntregaInicial = false;
 
-    public Encomienda(double Peso, Cliente Emisor, String Remitente, int ID, Vuelo VueloAsignado, String MedioPago, Fecha FechaReserva) {
-        super(ID, VueloAsignado, MedioPago, FechaReserva);
+    public Encomienda(double Peso, Cliente Emisor, String Remitente, Fecha FechaReserva) {
+        super(FechaReserva);
         this.Peso = Peso;
         this.Emisor = Emisor;
         this.Remitente = Remitente;
@@ -20,5 +20,10 @@ public class Encomienda extends Servicio{
     @Override
     public double calcularPrecio(){
         return this.Peso*VueloAsignado.getDestino().getPrecioEncomiendaKg();
+    }
+
+    // getters
+    public double getPeso() {
+        return Peso;
     }
 }
