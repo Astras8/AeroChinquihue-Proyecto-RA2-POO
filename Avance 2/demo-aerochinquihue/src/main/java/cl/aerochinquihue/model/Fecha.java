@@ -5,7 +5,7 @@ public class Fecha {
     private int mes;
     private int año;
 
-    // Setters
+    // Setters.
     public void setDia(int dia) {
         this.dia = dia;
     }

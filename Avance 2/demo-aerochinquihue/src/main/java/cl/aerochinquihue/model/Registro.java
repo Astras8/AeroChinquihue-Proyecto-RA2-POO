@@ -3,14 +3,14 @@ package cl.aerochinquihue.model;
 import java.util.ArrayList;
 
 public class Registro {
-    private ArrayList<Vuelo> vuelos;
-    private ArrayList<Servicio> servicios;
+    private ArrayList<Vuelo> registroVuelos;
+    private ArrayList<Servicio> registroServicios;
     private int contServicioId;
     private int contVuelosId;
 
     public Registro(){
-        this.vuelos = new ArrayList<>();
-        this.servicios = new ArrayList<>();
+        this.registroVuelos = new ArrayList<>();
+        this.registroServicios = new ArrayList<>();
         this.contServicioId = 1;
         this.contVuelosId = 1;
     }
@@ -19,7 +19,7 @@ public class Registro {
     public void agregarServicio(Servicio servicio){
         servicio.setId(contServicioId);
         contServicioId++;
-        servicios.add(servicio);
+        registroServicios.add(servicio);
     }
 
     public double calcularVentasDiarias(){

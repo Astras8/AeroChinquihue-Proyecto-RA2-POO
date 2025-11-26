@@ -11,7 +11,7 @@ public class Destino {
         this.precioEncomiendaKg = precioEncomiendaKg;
     }
 
-    // Getters
+    // Getters.
     public double getPrecioTransporte() {
         return precioTransporte;
     }

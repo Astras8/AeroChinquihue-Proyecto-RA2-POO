@@ -23,7 +23,7 @@ public class Encomienda extends Servicio{
         return this.peso*vueloAsignado.getDestino().getPrecioEncomiendaKg();
     }
 
-    // Getters
+    // Getters.
     public double getPeso() {
         return peso;
     }

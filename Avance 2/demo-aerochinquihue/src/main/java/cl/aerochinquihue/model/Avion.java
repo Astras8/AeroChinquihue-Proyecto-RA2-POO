@@ -14,7 +14,7 @@ public abstract class Avion {
         this.designacionSerie = designacionSerie;
     }
 
-    // Getters
+    // Getters.
     public int getAsientosTotales(){
         return asientosTotales.size();
     }
