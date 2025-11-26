@@ -1,25 +1,27 @@
 package cl.aerochinquihue;
 
+import java.io.IOException;
+
 import cl.aerochinquihue.model.Avion;
 import cl.aerochinquihue.model.Destino;
 import cl.aerochinquihue.model.Registro;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException { // Tranquilo Java, no explotará.
+
+        System.out.println("INICIANDO MÉTODO START.");
         
-        Label label = new Label("ola");
+        FXMLLoader fxmlLoader =  new FXMLLoader(App.class.getResource("/cl/aerochinquihue/view/login.fxml"));
+
+        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         
-        StackPane sceneRoot = new StackPane(label);
-        Scene scene = new Scene(sceneRoot, 640, 480);
-        
-        stage.setTitle("ola");
+        stage.setTitle("AeroChinquihue - Login - Final - 2025 - Edición especial - ola");
         stage.setScene(scene);
         stage.show();
     }
