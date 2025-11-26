@@ -1,29 +1,30 @@
 package cl.aerochinquihue.model;
 
 public class Encomienda extends Servicio{
-    private double Peso;
-    private Cliente Emisor;
-    private String Remitente;
-    private boolean EntregaInicial = false;
+    private double peso;
+    private Cliente emisor;
+    private String remitente;
+    private boolean entregaInicial = false;
 
-    public Encomienda(double Peso, Cliente Emisor, String Remitente, Fecha FechaReserva) {
-        super(FechaReserva);
-        this.Peso = Peso;
-        this.Emisor = Emisor;
-        this.Remitente = Remitente;
+    public Encomienda(double peso, Cliente emisor, String remitente, int diaReserva, int mesReserva, int añoReserva) {
+        super(diaReserva, mesReserva, añoReserva);
+        this.peso = peso;
+        this.emisor = emisor;
+        this.remitente = remitente;
     }
 
+    // Métodos.
     public void confirmarEntrega(){
-        this.EntregaInicial = true;
+        this.entregaInicial = true;
     }
 
     @Override
     public double calcularPrecio(){
-        return this.Peso*VueloAsignado.getDestino().getPrecioEncomiendaKg();
+        return this.peso*vueloAsignado.getDestino().getPrecioEncomiendaKg();
     }
 
-    // getters
+    // Getters
     public double getPeso() {
-        return Peso;
+        return peso;
     }
 }

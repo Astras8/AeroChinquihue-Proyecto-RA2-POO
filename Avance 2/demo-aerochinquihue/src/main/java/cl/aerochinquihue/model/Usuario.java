@@ -1,9 +1,9 @@
 package cl.aerochinquihue.model;
 
 public abstract class Usuario {
-    protected String Usuario;
+    protected String usuario;
 
-    public Usuario(String Usuario) {
-        this.Usuario = Usuario;
+    public Usuario(String usuario) {
+        this.usuario = usuario;
     }
 }

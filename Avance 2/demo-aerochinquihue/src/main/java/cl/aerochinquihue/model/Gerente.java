@@ -1,13 +1,14 @@
 package cl.aerochinquihue.model;
 
 public class Gerente extends Usuario{
-    private String Contraseña;
+    private String contraseña;
 
-    public Gerente(String Contraseña, String Usuario) {
-        super(Usuario);
-        this.Contraseña = Contraseña;
+    public Gerente(String contraseña, String usuario) {
+        super(usuario);
+        this.contraseña = contraseña;
     }
 
+    // Métodos.
     public void revisarVentas(){
 
     }
@@ -18,5 +19,9 @@ public class Gerente extends Usuario{
 
     public void aplicarDescuento(Servicio servicio, double porcentaje){
         servicio.setPrecio(servicio.getPrecio()*(porcentaje/100));
+    }
+
+    public void crearVueloExtraordinario(){
+        
     }
 }

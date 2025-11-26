@@ -3,53 +3,48 @@ package cl.aerochinquihue.model;
 import java.util.ArrayList;
 
 public class Vuelo {
-    private int ID;
-    private ArrayList<Servicio> ServiciosReservados;
-    private Destino Destino;
-    private Avion AvionAsignado;
-    private Fecha FechaVuelo;
-    private EstadoVuelo Estado = EstadoVuelo.DISPONIBLE;
-    private String HorarioSalida;
+    private int id;
+    private ArrayList<Servicio> serviciosReservados;
+    private Destino destino;
+    private Avion avionAsignado;
+    private Fecha fechaVuelo;
+    private EstadoVuelo estado = EstadoVuelo.DISPONIBLE;
+    private String horarioSalida;
 
-    public Vuelo(Destino Destino, Avion AvionAsignado, Fecha FechaVuelo, int AsientosRestantes, double PesoRestante, String HorarioSalida) {
-        this.ServiciosReservados = new ArrayList<>();
-        this.Destino = Destino;
-        this.AvionAsignado = AvionAsignado;
-        this.FechaVuelo = FechaVuelo;
-        this.HorarioSalida = HorarioSalida;
-    }
-
-    // getters
-    public Destino getDestino(){
-        return Destino;
+    public Vuelo(Destino destino, Avion avionAsignado, Fecha fechaVuelo, int AsientosRestantes, double PesoRestante, String horarioSalida) {
+        this.serviciosReservados = new ArrayList<>();
+        this.destino = destino;
+        this.avionAsignado = avionAsignado;
+        this.fechaVuelo = fechaVuelo;
+        this.horarioSalida = horarioSalida;
     }
 
     // Métodos.
     public void cancelarVuelo(){
-        this.Estado = EstadoVuelo.CANCELADO;
+        this.estado = EstadoVuelo.CANCELADO;
     }
 
     // Transportes.
-    public int calcularAsientosOcupados(){
+    public int calcularAsientosOcupados(){ // REFACTORIZAR
         int AsientosOcupados = 0;
-        for (int i = 0; i < AvionAsignado.AsientosTotales.length; i++){
-            if (AvionAsignado.AsientosTotales[i].comprobarAsiento()) AsientosOcupados++;
+        for (int i = 0; i < avionAsignado.getAsientosTotales(); i++){
+            // if (avionAsignado.AsientosTotales[i].comprobarAsiento()) AsientosOcupados++;
         }
         return AsientosOcupados;
     }
 
     public int calcularAsientosDisponibles(){
-        return AvionAsignado.getAsientosTotales() - calcularAsientosOcupados();
+        return avionAsignado.getAsientosTotales() - calcularAsientosOcupados();
     }
 
     public boolean puedeAgregarTransporte(){
-        return (calcularAsientosOcupados() + 1 <= AvionAsignado.getAsientosTotales()); // El uno representa el asiento que se quiere agregar. Si, tambien odiamos los números mágicos.
+        return (calcularAsientosOcupados() + 1 <= avionAsignado.getAsientosTotales()); // El uno representa el asiento que se quiere agregar. Si, tambien odiamos los números mágicos.
     }
 
     // Encomiendas.
     public double calcularPesoOcupado(){ // 
         double PesoOcupado = 0;
-        for (Servicio servicio : ServiciosReservados){
+        for (Servicio servicio : serviciosReservados){
             if (servicio instanceof Encomienda){ // Filtra solo las encomiendas.
                 Encomienda encomienda = (Encomienda) servicio; // Casteo de servicio a encomienda para que reconozca el getter.
                 PesoOcupado += encomienda.getPeso();
@@ -59,10 +54,15 @@ public class Vuelo {
     }
 
     public double calcularPesoDisponible(){
-        return this.AvionAsignado.getPesoMaximo()-calcularPesoOcupado();
+        return this.avionAsignado.getPesoMaximo()-calcularPesoOcupado();
     }
 
     public boolean puedeAgregarEncomienda(Encomienda encomienda){
-        return (calcularPesoOcupado() + encomienda.getPeso() <= this.AvionAsignado.getPesoMaximo());
+        return (calcularPesoOcupado() + encomienda.getPeso() <= this.avionAsignado.getPesoMaximo());
+    }
+
+    // Getters.
+    public Destino getDestino(){
+        return destino;
     }
 }

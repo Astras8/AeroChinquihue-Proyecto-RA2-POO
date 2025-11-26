@@ -1,8 +1,8 @@
 package cl.aerochinquihue;
 
-// JavaFX
 import cl.aerochinquihue.model.Avion;
 import cl.aerochinquihue.model.Destino;
+import cl.aerochinquihue.model.Registro;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -25,7 +25,10 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-                // Arreglo para almacenar los datos de los destinos dados en el enunciado.
+        // "Base de datos"
+        Registro registro = new Registro();
+
+        // Arreglo para almacenar los datos de los destinos dados en el enunciado.
         Destino[] PoblamientoDatosDestinos = new Destino[13];
 
         // Destinos

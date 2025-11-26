@@ -1,24 +1,30 @@
 package cl.aerochinquihue.model;
 
+import java.util.ArrayList;
+
 public class Cliente extends Usuario {
-    private int CantidadVuelos = 0;
-    private Servicio[] ServiciosContratados;
-    private boolean EsPersonalEmergencias = false;
+    private ArrayList<Servicio> serviciosContratados;
+    private boolean esPersonalEmergencias = false;
 
-    public Cliente(Servicio[] ServiciosContratados, String Usuario) {
-        super(Usuario);
-        this.ServiciosContratados = ServiciosContratados;
+    public Cliente(String usuario) {
+        super(usuario);
+        this.serviciosContratados = new ArrayList<>();
     }
 
+    // Métodos.
     public boolean validarDescuento(){
-        return this.CantidadVuelos >= 10;
+        return (0 >= 10);
     }
 
-    public void reservarPasaje(){
-        
-    }
+    public void solicitarPasaje(int numeroAsiento, int diaReserva, int mesReserva, int añoReserva, Registro registro){
+        Servicio pasaje = new Transporte(numeroAsiento, this, diaReserva, mesReserva, añoReserva);
+        registro.agregarServicio(pasaje);
+        serviciosContratados.add(pasaje);
+    }   
 
-    public void solicitarEncomienda(){
-
+    public void solicitarEncomienda(double peso, String remitente, int diaReserva, int mesReserva, int añoReserva, Registro registro){
+        Servicio encomienda = new Encomienda(peso, this, remitente, diaReserva, mesReserva, añoReserva);
+        registro.agregarServicio(encomienda);
+        serviciosContratados.add(encomienda);
     }
 }

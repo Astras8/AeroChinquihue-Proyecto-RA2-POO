@@ -1,21 +1,21 @@
 package cl.aerochinquihue.model;
 
 public class Destino {
-    private String Nombre;
-    private double PrecioTransporte;
-    private double PrecioEncomiendaKg;
+    private String nombre;
+    private double precioTransporte;
+    private double precioEncomiendaKg;
 
-    public Destino(String Nombre, double PrecioTransporte, double PrecioEncomiendaKg) {
-        this.Nombre = Nombre;
-        this.PrecioTransporte = PrecioTransporte;
-        this.PrecioEncomiendaKg = PrecioEncomiendaKg;
+    public Destino(String nombre, double precioTransporte, double precioEncomiendaKg) {
+        this.nombre = nombre;
+        this.precioTransporte = precioTransporte;
+        this.precioEncomiendaKg = precioEncomiendaKg;
     }
 
-    // getters
+    // Getters
     public double getPrecioTransporte() {
-        return PrecioTransporte;
+        return precioTransporte;
     }
     public double getPrecioEncomiendaKg() {
-        return PrecioEncomiendaKg;
+        return precioEncomiendaKg;
     }
 }

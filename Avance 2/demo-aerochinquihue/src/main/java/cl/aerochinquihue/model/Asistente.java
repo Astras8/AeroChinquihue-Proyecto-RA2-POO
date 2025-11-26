@@ -1,14 +1,26 @@
 package cl.aerochinquihue.model;
 
 public class Asistente extends Usuario {
-    private String Contraseña;
+    private String contraseña;
+    private double descuentoClientesFrecuentes = 0.90;
 
-    public Asistente(String Contraseña, String Usuario) {
-        super(Usuario);
-        this.Contraseña = Contraseña;
+    public Asistente(String contraseña, String usuario) {
+        super(usuario);
+        this.contraseña = contraseña;
     }
 
-    public void calcularYEnviarPrecio(Servicio servicio){
-        
+    // Métodos.
+    public double calcularYEnviarPrecio(Servicio servicio, Cliente cliente){
+        double precioServicio = servicio.calcularPrecio();
+        servicio.validarYAplicarDescuento(cliente);
+        return precioServicio;
+    }
+
+    public boolean validarTransporte(){ // COMPLETAR.
+        return true;
+    }
+
+    public boolean validarEncomienda(){ // COMPLETAR.
+        return true;
     }
 }

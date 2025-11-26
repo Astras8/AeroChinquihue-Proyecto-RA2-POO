@@ -1,31 +1,40 @@
 package cl.aerochinquihue.model;
 
 public abstract class Servicio {
-    protected int ID;
-    protected Vuelo VueloAsignado;
-    protected double Precio;
-    protected MedioPago PagoElegido = MedioPago.NO_ELEGIDO;
-    protected Fecha FechaReserva;
-    protected EstadoServicio Estado = EstadoServicio.EN_PROCESO;
+    protected int id;
+    protected Vuelo vueloAsignado;
+    protected double precio;
+    protected MedioPago pagoElegido = MedioPago.NO_ELEGIDO;
+    protected Fecha fechaReserva;
+    protected EstadoServicio estado = EstadoServicio.EN_PROCESO;
 
-    public Servicio(Fecha FechaReserva){
-        this.FechaReserva = FechaReserva;
+    public Servicio(int diaReserva, int mesReserva, int añoReserva){
+        this.fechaReserva.setDia(diaReserva);
+        this.fechaReserva.setMes(mesReserva);
+        this.fechaReserva.setAño(añoReserva);
     }
 
+    // Métodos.
     abstract public double calcularPrecio();
 
-    public void aplicarDescuento(Cliente cliente){
-        if (cliente.validarDescuento() == true) this.Precio = this.Precio*0.10;
+    public void validarYAplicarDescuento(Cliente cliente){
+        if (cliente.validarDescuento()) this.precio = this.precio*0.90;
     }
 
     public void validarPago(MedioPago medioElegido){
-        if (this.PagoElegido == MedioPago.NO_ELEGIDO) this.PagoElegido = medioElegido;
+        if (this.pagoElegido == MedioPago.NO_ELEGIDO) this.pagoElegido = medioElegido;
     }
 
+    // Getters.
     public double getPrecio() {
-        return Precio;
+        return precio;
     }
-    public void setPrecio(double Precio) {
-        this.Precio = Precio;
+
+    // Setters.
+    public void setId(int id){
+        this.id = id;
+    }
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 }
