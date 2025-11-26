@@ -28,7 +28,7 @@ public class Cliente extends Usuario {
         Servicio encomienda = new Encomienda(peso, this, remitente, diaReserva, mesReserva, añoReserva);
         registro.agregarServicio(encomienda);
         serviciosContratados.add(encomienda);
-        System.out.println("\nSe ha enviado una solicitud de encomienda pendiente para aprobación.");
+        System.out.println("\nSe ha enviado una solicitud de encomienda pendiente para aprobación.\n");
     }
 
     // Getters

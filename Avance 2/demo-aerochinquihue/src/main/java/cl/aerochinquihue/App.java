@@ -7,7 +7,7 @@ import cl.aerochinquihue.model.Cliente;
 import cl.aerochinquihue.model.Destino;
 import cl.aerochinquihue.model.Registro;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -49,6 +49,7 @@ public class App extends Application {
         // Pruebas
         Cliente clientePrueba = new Cliente("astras", "kevin");
         clientePrueba.solicitarPasaje(2, 26, 11, 2025, registro);
+        clientePrueba.solicitarEncomienda(3, "kevin 2", 26, 11, 2025, registro);
     }
 
     @Override
@@ -56,9 +57,12 @@ public class App extends Application {
 
         System.out.println("||| INICIANDO METODO START |||\n\n");
         
-        FXMLLoader fxmlLoader =  new FXMLLoader(App.class.getResource("/cl/aerochinquihue/view/login.fxml"));
+        // FXMLLoader fxmlLoader =  new FXMLLoader(App.class.getResource("/cl/aerochinquihue/view/login.fxml"));
+        // Scene scene = new Scene(fxmlLoader.load(), 640, 480);
 
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
+        Group root = new Group();
+
+        Scene scene = new Scene(root);
         
         stage.setTitle("AeroChinquihue - Login");
         stage.setScene(scene);

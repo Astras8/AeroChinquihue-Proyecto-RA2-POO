@@ -9,6 +9,7 @@ public abstract class Servicio {
     protected EstadoServicio estado = EstadoServicio.EN_PROCESO;
 
     public Servicio(Fecha fechaReserva){
+        id++;
         this.fechaReserva = fechaReserva;
     }
 

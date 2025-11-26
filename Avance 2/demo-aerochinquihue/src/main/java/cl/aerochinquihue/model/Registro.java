@@ -21,7 +21,7 @@ public class Registro {
         contServicioId++;
         registroServicios.add(servicio);
 
-        System.out.println("Se ha agregado el servicio de ID: " + servicio.getId() + " al registro.\n");
+        System.out.println("\nSe ha agregado el servicio de ID: " + servicio.getId() + " al registro.\n");
     }
 
     public double calcularVentasDiarias(){

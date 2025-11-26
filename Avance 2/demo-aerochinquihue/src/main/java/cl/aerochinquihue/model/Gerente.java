@@ -19,7 +19,7 @@ public class Gerente extends Usuario{
 
     public void aplicarDescuento(Servicio servicio, double porcentaje){
         servicio.setPrecio(servicio.getPrecio()*(porcentaje/100));
-        System.out.println("Se ha aplicado un descuento del " + porcentaje + "% al servicio con ID:" + servicio.id + "\n");
+        System.out.println("\nSe ha aplicado un descuento del " + porcentaje + "% al servicio con ID:" + servicio.id + "\n");
     }
 
     public void crearVueloExtraordinario(){

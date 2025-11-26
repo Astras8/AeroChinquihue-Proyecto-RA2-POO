@@ -16,7 +16,7 @@ public class Encomienda extends Servicio{
     // Métodos.
     public void confirmarEntrega(){
         this.entregaInicial = true;
-        System.out.println("Se ha confirmado la entrega de la encomienda al aerodromo.");
+        System.out.println("\nSe ha confirmado la entrega de la encomienda al aerodromo.\n");
     }
 
     @Override
