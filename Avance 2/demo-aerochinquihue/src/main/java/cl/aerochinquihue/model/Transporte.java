@@ -5,7 +5,7 @@ public class Transporte extends Servicio {
     private Cliente pasajero;
 
     public Transporte(int asientoElegido, Cliente pasajero, int diaReserva, int mesReserva, int añoReserva) {
-        super(diaReserva, mesReserva, añoReserva);
+        super(new Fecha(diaReserva, mesReserva, añoReserva));
         this.asientoElegido = asientoElegido;
         this.pasajero = pasajero;
     }

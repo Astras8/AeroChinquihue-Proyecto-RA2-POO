@@ -3,8 +3,8 @@ package cl.aerochinquihue.model;
 public class Gerente extends Usuario{
     private String contraseña;
 
-    public Gerente(String contraseña, String usuario) {
-        super(usuario);
+    public Gerente(String contraseña, String usuario, String nombre) {
+        super(usuario, nombre);
         this.contraseña = contraseña;
     }
 
@@ -19,6 +19,7 @@ public class Gerente extends Usuario{
 
     public void aplicarDescuento(Servicio servicio, double porcentaje){
         servicio.setPrecio(servicio.getPrecio()*(porcentaje/100));
+        System.out.println("Se ha aplicado un descuento del " + porcentaje + "% al servicio con ID:" + servicio.id + "\n");
     }
 
     public void crearVueloExtraordinario(){

@@ -7,7 +7,7 @@ public class Encomienda extends Servicio{
     private boolean entregaInicial = false;
 
     public Encomienda(double peso, Cliente emisor, String remitente, int diaReserva, int mesReserva, int añoReserva) {
-        super(diaReserva, mesReserva, añoReserva);
+        super(new Fecha(diaReserva, mesReserva, añoReserva));
         this.peso = peso;
         this.emisor = emisor;
         this.remitente = remitente;
@@ -16,6 +16,7 @@ public class Encomienda extends Servicio{
     // Métodos.
     public void confirmarEntrega(){
         this.entregaInicial = true;
+        System.out.println("Se ha confirmado la entrega de la encomienda al aerodromo.");
     }
 
     @Override

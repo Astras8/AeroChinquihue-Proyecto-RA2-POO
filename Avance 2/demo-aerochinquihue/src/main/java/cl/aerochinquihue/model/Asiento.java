@@ -12,4 +12,9 @@ public class Asiento {
     public boolean comprobarAsiento(){
         return (this.pasajero != null);
     }
+
+    @Override
+    public String toString(){
+        return "\n|| ASIENTO ||\n\nDesignación: " + this.designacion + "\nPasajero: " + pasajero.getNombre();
+    }
 }

@@ -3,6 +3,7 @@ package cl.aerochinquihue;
 import java.io.IOException;
 
 import cl.aerochinquihue.model.Avion;
+import cl.aerochinquihue.model.Cliente;
 import cl.aerochinquihue.model.Destino;
 import cl.aerochinquihue.model.Registro;
 import javafx.application.Application;
@@ -13,20 +14,9 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException { // Tranquilo Java, no explotará.
+    public void init() throws Exception {
+        System.out.println("||| INICIALIZANDO DATOS |||\n\n");
 
-        System.out.println("INICIANDO MÉTODO START.");
-        
-        FXMLLoader fxmlLoader =  new FXMLLoader(App.class.getResource("/cl/aerochinquihue/view/login.fxml"));
-
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        
-        stage.setTitle("AeroChinquihue - Login - Final - 2025 - Edición especial - ola");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static void main(String[] args) {
         // "Base de datos"
         Registro registro = new Registro();
 
@@ -55,7 +45,31 @@ public class App extends Application {
         PoblamientoDatosAviones[0] = new cl.aerochinquihue.model.Cessna310("CESSNA310", 6, 910, "C310-1");
         PoblamientoDatosAviones[1] = new cl.aerochinquihue.model.Cessna208("CESSNA208 CARAVAN", 9, 1315, "C208C-1");
         PoblamientoDatosAviones[2] = new cl.aerochinquihue.model.Let410("LET410UVP-E20", 19, 1800, "LET420-1");
+        
+        // Pruebas
+        Cliente clientePrueba = new Cliente("astras", "kevin");
+        clientePrueba.solicitarPasaje(2, 26, 11, 2025, registro);
+    }
 
+    @Override
+    public void start(Stage stage) throws IOException {
+
+        System.out.println("||| INICIANDO METODO START |||\n\n");
+        
+        FXMLLoader fxmlLoader =  new FXMLLoader(App.class.getResource("/cl/aerochinquihue/view/login.fxml"));
+
+        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
+        
+        stage.setTitle("AeroChinquihue - Login");
+        stage.setScene(scene);
+        stage.show();
+
+        System.out.println(" || MOSTRANDO VENTANA ||\n\n");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("||| INICIANDO APLICACION |||\n\n");
         launch();
+        System.out.println("||| CERRANDO APLICACION |||\n\n");
     }
 }

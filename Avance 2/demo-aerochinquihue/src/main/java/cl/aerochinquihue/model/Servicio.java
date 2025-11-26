@@ -1,17 +1,15 @@
 package cl.aerochinquihue.model;
 
 public abstract class Servicio {
-    protected int id;
+    protected int id = 1;
     protected Vuelo vueloAsignado;
     protected double precio;
     protected MedioPago pagoElegido = MedioPago.NO_ELEGIDO;
     protected Fecha fechaReserva;
     protected EstadoServicio estado = EstadoServicio.EN_PROCESO;
 
-    public Servicio(int diaReserva, int mesReserva, int añoReserva){
-        this.fechaReserva.setDia(diaReserva);
-        this.fechaReserva.setMes(mesReserva);
-        this.fechaReserva.setAño(añoReserva);
+    public Servicio(Fecha fechaReserva){
+        this.fechaReserva = fechaReserva;
     }
 
     // Métodos.
@@ -26,8 +24,11 @@ public abstract class Servicio {
     }
 
     // Getters.
+    public int getId(){
+        return this.id;
+    }
     public double getPrecio() {
-        return precio;
+        return this.precio;
     }
 
     // Setters.
