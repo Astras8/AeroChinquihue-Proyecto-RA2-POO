@@ -2,17 +2,22 @@ package cl.aerochinquihue.model;
 
 public class Transporte extends Servicio {
     private int asientoElegido;
-    private Cliente pasajero;
 
-    public Transporte(int asientoElegido, Cliente pasajero, int diaReserva, int mesReserva, int añoReserva) {
-        super(new Fecha(diaReserva, mesReserva, añoReserva));
+    public Transporte(int asientoElegido, Cliente cliente, int diaReserva, int mesReserva, int añoReserva, Vuelo vueloAsignado) {
+        super(cliente, new Fecha(diaReserva, mesReserva, añoReserva));
         this.asientoElegido = asientoElegido;
-        this.pasajero = pasajero;
+        this.vueloAsignado = vueloAsignado;
     }
 
     // Métodos.
     @Override
     public double calcularPrecio(){
-        return vueloAsignado.getDestino().getPrecioTransporte();
+        this.precio = vueloAsignado.getDestino().getPrecioTransporte();
+        return this.precio;
+    }
+
+    @Override
+    public String toString(){
+        return "|| SERVICIO: TRANSPORTE ||\n\nID: " + this.id + "\nID del vuelo asignado: " + this.vueloAsignado.getId() + "\nPrecio: " + this.precio + "\nMedio de pago: " + this.pagoElegido + "\nFecha: " + fechaReserva.getDia() + "/" + fechaReserva.getMes() + "/" + fechaReserva.getAño() + "\nEstado: " + this.estadoServicio + "\nAsiento elegido: " + this.asientoElegido + "\n";
     }
 }

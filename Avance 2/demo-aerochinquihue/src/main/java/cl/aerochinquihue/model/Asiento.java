@@ -15,6 +15,6 @@ public class Asiento {
 
     @Override
     public String toString(){
-        return "\n|| ASIENTO ||\n\nDesignación: " + this.designacion + "\nPasajero: " + pasajero.getNombre();
+        return "|| ASIENTO ||\n\nDesignación: " + this.designacion + "\nPasajero: " + pasajero.getNombre();
     }
 }

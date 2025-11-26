@@ -11,6 +11,17 @@ public class Fecha {
         this.año = año;
     }
 
+    // Getters.
+    public int getDia() {
+        return dia;
+    }
+    public int getMes() {
+        return mes;
+    }
+    public int getAño() {
+        return año;
+    }
+
     // Setters.
     public void setDia(int dia) {
         this.dia = dia;

@@ -3,6 +3,8 @@ package cl.aerochinquihue.model;
 import java.util.ArrayList;
 
 public class Vuelo {
+    private static int contadorId = 1;
+
     private int id;
     private ArrayList<Servicio> serviciosReservados;
     private Destino destino;
@@ -11,11 +13,12 @@ public class Vuelo {
     private EstadoVuelo estado = EstadoVuelo.DISPONIBLE;
     private String horarioSalida;
 
-    public Vuelo(Destino destino, Avion avionAsignado, Fecha fechaVuelo, int AsientosRestantes, double PesoRestante, String horarioSalida) {
+    public Vuelo(Destino destino, Avion avionAsignado, int diaFechaVuelo, int mesFechaVuelo, int añoFechaVuelo, String horarioSalida) {
+        this.id = contadorId++;
         this.serviciosReservados = new ArrayList<>();
         this.destino = destino;
         this.avionAsignado = avionAsignado;
-        this.fechaVuelo = fechaVuelo;
+        this.fechaVuelo = new Fecha(diaFechaVuelo, mesFechaVuelo, añoFechaVuelo);
         this.horarioSalida = horarioSalida;
     }
 
@@ -57,11 +60,14 @@ public class Vuelo {
         return this.avionAsignado.getPesoMaximo()-calcularPesoOcupado();
     }
 
-    public boolean puedeAgregarEncomienda(Encomienda encomienda){
-        return (calcularPesoOcupado() + encomienda.getPeso() <= this.avionAsignado.getPesoMaximo());
+    public boolean puedeAgregarEncomienda(double peso){
+        return (calcularPesoOcupado() + peso <= this.avionAsignado.getPesoMaximo());
     }
 
     // Getters.
+    public int getId(){
+        return id;
+    }
     public Destino getDestino(){
         return destino;
     }

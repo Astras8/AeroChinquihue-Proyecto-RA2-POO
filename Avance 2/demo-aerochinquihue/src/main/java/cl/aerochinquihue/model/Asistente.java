@@ -13,11 +13,12 @@ public class Asistente extends Usuario {
     public double calcularYEnviarPrecio(Servicio servicio, Cliente cliente){
         double precioServicio = servicio.calcularPrecio();
         servicio.validarYAplicarDescuento(cliente);
-        System.out.println("\nEl asistente " + this.nombre + " ha enviado el precio ($" + precioServicio + ") del servicio " + servicio.getClass() + " al cliente " + cliente.getNombre());
+        System.out.println("El asistente " + this.nombre + " ha enviado el precio ($" + precioServicio + ") del servicio " + servicio.getClass() + " al cliente " + cliente.getNombre() + "\n");
         return precioServicio;
     }
 
-    public boolean validarTransporte(){ // COMPLETAR.
+    public boolean validarTransporte(Servicio servicio){ // COMPLETAR.
+        servicio.setEstadoServicio(EstadoServicio.APROBADO);
         return true;
     }
 
