@@ -2,6 +2,13 @@ package cl.aerochinquihue;
 
 import java.io.IOException;
 
+import cl.aerochinquihue.model.Asistente;
+import cl.aerochinquihue.model.Avion;
+import cl.aerochinquihue.model.Cliente;
+import cl.aerochinquihue.model.Destino;
+import cl.aerochinquihue.model.MedioPago;
+import cl.aerochinquihue.model.Registro;
+import cl.aerochinquihue.model.Vuelo;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
