@@ -19,8 +19,8 @@ public class Cliente extends Usuario {
     public void solicitarPasaje(int numeroAsiento, int diaReserva, int mesReserva, int añoReserva, Vuelo vueloAsignado, Registro registro){
         System.out.println("Intentando crear transporte.\n");
         if (vueloAsignado.puedeAgregarTransporte()){
-            Servicio pasaje = new Transporte(numeroAsiento, this, diaReserva, mesReserva, añoReserva, vueloAsignado);
-            registro.agregarServicio(pasaje);
+            Transporte pasaje = new Transporte(numeroAsiento, this, diaReserva, mesReserva, añoReserva, vueloAsignado);
+            registro.agregarTransporte(pasaje);
             System.out.println("Se ha enviado una solicitud de pasaje pendiente para aprobacion.\n");
             serviciosContratados.add(pasaje);
             System.out.println("Se agrego un servicio a la lista de servicios contratados del cliente: " + this.nombre + "\n");
@@ -30,8 +30,8 @@ public class Cliente extends Usuario {
 
     public void solicitarEncomienda(double peso, String remitente, Vuelo vueloAsignado, int diaReserva, int mesReserva, int añoReserva, Registro registro){
         if (vueloAsignado.puedeAgregarEncomienda(peso)){
-            Servicio encomienda = new Encomienda(peso, this, remitente, vueloAsignado, diaReserva, mesReserva, añoReserva);
-            registro.agregarServicio(encomienda);
+            Encomienda encomienda = new Encomienda(peso, this, remitente, vueloAsignado, diaReserva, mesReserva, añoReserva);
+            registro.agregarEncomienda(encomienda);
             serviciosContratados.add(encomienda);
             System.out.println("Se ha enviado una solicitud de encomienda pendiente para aprobacion.\n");
         }

@@ -17,13 +17,25 @@ public class Asistente extends Usuario {
         return precioServicio;
     }
 
-    public boolean validarTransporte(Servicio servicio){ // COMPLETAR.
-        servicio.setEstadoServicio(EstadoServicio.APROBADO);
-        return true;
+    public boolean validarTransporte(Transporte transporte){ // COMPLETAR.
+        if (transporte.validarServicio()){
+            transporte.setEstadoServicio(EstadoServicio.APROBADO);
+            return true;
+        }
+        else{
+            transporte.setEstadoServicio(EstadoServicio.RECHAZADO);
+            return false;
+        }
     }
 
-    public boolean validarEncomienda(Servicio servicio){ // COMPLETAR.
-        servicio.setEstadoServicio(EstadoServicio.APROBADO);
-        return true;
+    public boolean validarEncomienda(Encomienda encomienda){ // COMPLETAR.
+        if (encomienda.validarServicio()){
+            encomienda.setEstadoServicio(EstadoServicio.APROBADO);
+            return true;
+        }
+        else{
+            encomienda.setEstadoServicio(EstadoServicio.RECHAZADO);
+            return false;
+        }
     }
 }

@@ -3,10 +3,10 @@ package cl.aerochinquihue.model;
 public abstract class Servicio {
     private static int contadorId = 1;
 
-    protected int id;
+    protected int id = 0;
     protected Cliente cliente;
     protected Vuelo vueloAsignado;
-    protected double precio;
+    protected double precio = 0;
     protected MedioPago pagoElegido = MedioPago.NO_ELEGIDO;
     protected Fecha fechaReserva;
     protected EstadoServicio estadoServicio = EstadoServicio.EN_PROCESO;
@@ -19,6 +19,7 @@ public abstract class Servicio {
 
     // Métodos.
     public abstract double calcularPrecio();
+    public abstract boolean validarServicio();
 
     public void validarYAplicarDescuento(Cliente cliente){
         if (cliente.validarDescuento()){
@@ -32,6 +33,26 @@ public abstract class Servicio {
         if (this.pagoElegido == MedioPago.NO_ELEGIDO) this.pagoElegido = medioElegido;
     }
 
+    // Validaciones
+    public boolean validarId(){
+        return (id != 0);
+    }
+    public boolean validarCliente(){
+        return (cliente != null);
+    }
+    public boolean validarVueloAsignado(){
+        return (vueloAsignado != null);
+    }
+    public boolean validarPrecio(){
+        return (precio != 0);
+    }
+    public boolean validarPagoElegido(){
+        return (pagoElegido != null && pagoElegido != MedioPago.NO_ELEGIDO);
+    }
+    public boolean validarFechaReserva(){
+        return (fechaReserva.validarFecha());
+    }
+
     // Getters.
     public int getId(){
         return this.id;
@@ -39,8 +60,17 @@ public abstract class Servicio {
     public Cliente getCliente(){
         return this.cliente;
     }
+    public Vuelo getVueloAsignado(){
+        return vueloAsignado;
+    }
     public double getPrecio() {
         return this.precio;
+    }
+    public MedioPago getMedioPago(){
+        return this.pagoElegido;
+    }
+    public EstadoServicio getEstadoServicio(){
+        return estadoServicio;
     }
 
     // Setters.

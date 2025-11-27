@@ -68,7 +68,7 @@ public class App extends Application {
 
         clientePrueba.finalizarCompra(registro.getRegistroServicioEnPosicion(0), MedioPago.DEBITO);
 
-        asistentePrueba.validarTransporte(registro.getRegistroServicioEnPosicion(0));
+        asistentePrueba.validarTransporte(registro.getRegistroTransportesEnPosicion(0));
 
         System.out.println(registro.getRegistroServicioEnPosicion(0).toString());
 
@@ -79,11 +79,11 @@ public class App extends Application {
 
         clientePrueba.finalizarCompra(registro.getRegistroServicioEnPosicion(1), MedioPago.TRANSFERENCIA);
 
-        asistentePrueba.validarEncomienda(registro.getRegistroServicioEnPosicion(1));
+        asistentePrueba.validarEncomienda(registro.getRegistroEncomiendasEnPosicion(0));
 
-        // registro.getRegistroServicioEnPosicion(1).confirmarEntrega();
+        registro.getRegistroEncomiendasEnPosicion(0).confirmarEntrega();
 
-        System.out.println(registro.getRegistroServicioEnPosicion(1));
+        System.out.println(registro.getRegistroServicioEnPosicion(1).toString());
     }
 
     @Override

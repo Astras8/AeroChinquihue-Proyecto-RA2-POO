@@ -24,6 +24,18 @@ public class Encomienda extends Servicio{
         return this.precio;
     }
 
+    // Validaciones.
+    @Override
+    public boolean validarServicio(){
+        return (this.validarId() && this.validarCliente() && this.validarVueloAsignado() && this.validarPrecio() && this.validarPagoElegido() && this.validarFechaReserva() && this.validarPeso() && this.validarRemitente());
+    }
+    public boolean validarPeso(){
+        return (peso > 0 && peso <= 500);
+    }
+    public boolean validarRemitente(){
+        return (remitente != null);
+    }
+
     @Override
     public String toString(){
         return "|| SERVICIO: ENCOMIENDA ||\n\nID: " + this.id + "\nID del vuelo asignado: " + this.vueloAsignado.getId() + "\nEmisor: " + this.cliente.getNombre() + "\nPrecio: $" + this.precio + "\nMedio de pago: " + this.pagoElegido + "\nFecha: " + fechaReserva.getDia() + "/" + fechaReserva.getMes() + "/" + fechaReserva.getAño() + "\nEstado: " + this.estadoServicio + "\nPeso: " + this.peso + "Kg.\nRemitente: " + this.remitente + "\n" + "Se entrego en el aerodromo: " + this.entregaInicial + "\n";

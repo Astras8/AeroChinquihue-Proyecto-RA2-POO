@@ -24,7 +24,7 @@ public class Vuelo {
 
     // Métodos.
     public void cancelarVuelo(){
-        this.estado = EstadoVuelo.CANCELADO;
+        this.estado = EstadoVuelo.CANCELADO; // COMPLETAR
     }
 
     // Transportes.

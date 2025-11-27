@@ -20,4 +20,18 @@ public class Transporte extends Servicio {
     public String toString(){
         return "|| SERVICIO: TRANSPORTE ||\n\nID: " + this.id + "\nID del vuelo asignado: " + this.vueloAsignado.getId() + "\nPrecio: $" + this.precio + "\nMedio de pago: " + this.pagoElegido + "\nFecha: " + fechaReserva.getDia() + "/" + fechaReserva.getMes() + "/" + fechaReserva.getAño() + "\nEstado: " + this.estadoServicio + "\nAsiento elegido: " + this.asientoElegido + "\n";
     }
+
+    // Validaciones.
+    @Override
+    public boolean validarServicio(){
+        return (this.validarId() && this.validarCliente() && this.validarVueloAsignado() && this.validarPrecio() && this.validarPagoElegido() && this.validarFechaReserva() && this.validarAsientoElegido());
+    }
+    public boolean validarAsientoElegido(){ // COMPLETAR.
+        return true;
+    }
+
+    // Getters.
+    public int getAsientoElegido(){
+        return asientoElegido;
+    }
 }

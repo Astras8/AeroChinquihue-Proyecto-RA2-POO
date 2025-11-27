@@ -11,6 +11,20 @@ public class Fecha {
         this.año = año;
     }
 
+    // Validaciones.
+    public boolean validarFecha(){
+        return (this.validarDia() && this.validarMes() && this.validarAño());
+    }
+    public boolean validarDia(){
+        return (dia >= 1 && dia <= 31);
+    }
+    public boolean validarMes(){
+        return (mes >= 1 && mes <= 12);
+    }
+    public boolean validarAño(){
+        return (año == 2025 || año == 2026);
+    }
+
     // Getters.
     public int getDia() {
         return dia;
