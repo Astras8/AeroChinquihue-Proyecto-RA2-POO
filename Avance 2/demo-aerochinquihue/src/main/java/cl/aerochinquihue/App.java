@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -136,7 +135,7 @@ public void init() throws Exception {
     System.out.println("||| DATOS CARGADOS CORRECTAMENTE |||\n\n");
 }*/
 
-    @Override
+@Override
 public void start(Stage stage) throws IOException {
 
     System.out.println("||| INICIANDO METODO START |||\n\n");
@@ -170,7 +169,10 @@ public void start(Stage stage) throws IOException {
         Button btnReserva = new Button("Reservar");
         Button btnHorario = new Button("Horarios");
 
-        // ACCIÓN DEL BOTÓN RESERVAR (camina a ventana 3)
+        btnHorario.setOnAction(h -> {
+            new HorarioView(stage).mostrar();
+        });
+
         btnReserva.setOnAction(r -> {
 
             //Reservas
@@ -179,109 +181,16 @@ public void start(Stage stage) throws IOException {
             
             Button btnPasaje = new Button("Reservar pasaje");
 
-             btnPasaje.setOnAction(i -> {
-
-                Label label3 = new Label("Destino");
-                label3.setStyle("-fx-font-size: 18px;");
-
-                //Destino escogido
-                Label Destino = new Label("Escoga una opcion:");
-                        
-                Button btnDestino1 = new Button("Cochamó");
-                Button btnDestino2 = new Button("Puelo Bajo");
-                Button btnDestino3 = new Button("Contao");
-                Button btnDestino4 = new Button("Rio Negro");
-                Button btnDestino5 = new Button("Pupelde");
-                Button btnDestino6 = new Button("Chepu");
-                Button btnDestino7 = new Button("Ayacara");
-                Button btnDestino8 = new Button("Pillán");
-                Button btnDestino9 = new Button("Reñihue");
-                Button btnDestino10 = new Button("Isla Quenac");
-                Button btnDestino11 = new Button("Palqui");
-                Button btnDestino12 = new Button("Chaitén");
-                Button btnDestino13 = new Button("Santa Bárbara");
-              
-                // Ventana 4
-                VBox layout4 = new VBox(20);
-                layout4.setPadding(new Insets(20));
-                layout4.getChildren().addAll(label3, Destino, btnDestino1, btnDestino2, btnDestino3, btnDestino4, btnDestino5, btnDestino6, btnDestino7, btnDestino8, btnDestino9, btnDestino10, btnDestino11, btnDestino12, btnDestino13);
-
-                Scene escena4 = new Scene(layout4, 400, 600);
-                // escena 4
-                stage.setScene(escena4);
-            });
-            
-            
             //Encomiendas
             Label Encomienda = new Label("Encomienda:");
             TextField txtEncomienda = new TextField();
             txtEncomienda.setPromptText("Ingrese peso de encomienda");
             Button btnIngresar2 = new Button("Ingresar");
 
-            btnIngresar2.setOnAction(i -> {
-                System.out.println("Peso ingresado: " + txtEncomienda.getText()); 
+            btnPasaje.setOnAction(m -> new DestinosView(stage, false).mostrar());
 
-                Label label3 = new Label("Destino");
-                label3.setStyle("-fx-font-size: 18px;");
+            btnIngresar2.setOnAction(m -> new DestinosView(stage, true).mostrar());
 
-                Label Destino = new Label("Escoja una opción:");
-
-                Button btnDestino1 = new Button("Cochamó");
-                Button btnDestino2 = new Button("Puelo Bajo");
-                Button btnDestino3 = new Button("Contao");
-                Button btnDestino4 = new Button("Rio Negro");
-                Button btnDestino5 = new Button("Pupelde");
-                Button btnDestino6 = new Button("Chepu");
-                Button btnDestino7 = new Button("Ayacara");
-                Button btnDestino8 = new Button("Pillán");
-                Button btnDestino9 = new Button("Reñihue");
-                Button btnDestino10 = new Button("Isla Quenac");
-                Button btnDestino11 = new Button("Palqui");
-                Button btnDestino12 = new Button("Chaitén");
-                Button btnDestino13 = new Button("Santa Bárbara");
-
-                // LABELS (uno para cada botón)
-                Label lb1 = new Label("Imagen 1 + precio");
-                Label lb2 = new Label("Imagen 2 + precio");
-                Label lb3 = new Label("Imagen 3 + precio");
-                Label lb4 = new Label("Imagen 4 + precio");
-                Label lb5 = new Label("Imagen 5 + precio");
-                Label lb6 = new Label("Imagen 6 + precio");
-                Label lb7 = new Label("Imagen 7 + precio");
-                Label lb8 = new Label("Imagen 8 + precio");
-                Label lb9 = new Label("Imagen 9 + precio");
-                Label lb10 = new Label("Imagen 10 + precio");
-                Label lb11 = new Label("Imagen 11 + precio");
-                Label lb12 = new Label("Imagen 12 + precio");
-                Label lb13 = new Label("Imagen 13 + precio");
-
-                // HBox para poner Label + Botón juntos
-                HBox fila1 = new HBox(10, btnDestino1, lb1 );
-                HBox fila2 = new HBox(10, btnDestino2, lb2 );
-                HBox fila3 = new HBox(10, btnDestino3, lb3 );
-                HBox fila4 = new HBox(10, btnDestino4, lb4 );
-                HBox fila5 = new HBox(10, btnDestino5, lb5 );
-                HBox fila6 = new HBox(10, btnDestino6, lb6 );
-                HBox fila7 = new HBox(10, btnDestino7, lb7 );
-                HBox fila8 = new HBox(10, btnDestino8, lb8 );
-                HBox fila9 = new HBox(10, btnDestino9, lb9 );
-                HBox fila10 = new HBox(10, btnDestino10, lb10 );
-                HBox fila11 = new HBox(10, btnDestino11, lb11 );
-                HBox fila12 = new HBox(10, btnDestino12, lb12 );
-                HBox fila13 = new HBox(10, btnDestino13, lb13 );
-
-                // Ventana 4
-                VBox layout4 = new VBox(12);
-                layout4.setPadding(new Insets(20));
-                layout4.getChildren().addAll(
-                    label3, Destino,
-                    fila1, fila2, fila3, fila4, fila5, fila6, fila7, fila8, fila9, fila10, fila11, fila12, fila13);
-                
-                // escena 4
-                Scene escena4 = new Scene(layout4, 400, 600);
-                stage.setScene(escena4);
-
-            });
 
             // Ventana 3
             VBox layout3 = new VBox(20);
@@ -321,6 +230,8 @@ public void start(Stage stage) throws IOException {
 
     System.out.println(" || MOSTRANDO VENTANA ||\n\n");
     }
+
+
 
     public static void main(String[] args) {
         System.out.println("||| INICIANDO APLICACION |||\n\n");
