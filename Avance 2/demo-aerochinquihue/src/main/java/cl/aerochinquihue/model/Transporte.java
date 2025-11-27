@@ -18,6 +18,6 @@ public class Transporte extends Servicio {
 
     @Override
     public String toString(){
-        return "|| SERVICIO: TRANSPORTE ||\n\nID: " + this.id + "\nID del vuelo asignado: " + this.vueloAsignado.getId() + "\nPrecio: " + this.precio + "\nMedio de pago: " + this.pagoElegido + "\nFecha: " + fechaReserva.getDia() + "/" + fechaReserva.getMes() + "/" + fechaReserva.getAño() + "\nEstado: " + this.estadoServicio + "\nAsiento elegido: " + this.asientoElegido + "\n";
+        return "|| SERVICIO: TRANSPORTE ||\n\nID: " + this.id + "\nID del vuelo asignado: " + this.vueloAsignado.getId() + "\nPrecio: $" + this.precio + "\nMedio de pago: " + this.pagoElegido + "\nFecha: " + fechaReserva.getDia() + "/" + fechaReserva.getMes() + "/" + fechaReserva.getAño() + "\nEstado: " + this.estadoServicio + "\nAsiento elegido: " + this.asientoElegido + "\n";
     }
 }

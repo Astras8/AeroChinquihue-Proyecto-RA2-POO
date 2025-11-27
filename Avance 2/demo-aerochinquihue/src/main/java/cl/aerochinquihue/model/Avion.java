@@ -21,8 +21,10 @@ public abstract class Avion {
     public int getAsientosTotales(){
         return capacidad.size();
     }
-    
     public double getPesoMaximo() {
         return pesoMaximo;
+    }
+    public String getDesignacionSerie(){
+        return designacionSerie;
     }
 }

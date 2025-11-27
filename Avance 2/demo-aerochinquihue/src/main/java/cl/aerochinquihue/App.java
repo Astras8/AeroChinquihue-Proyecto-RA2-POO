@@ -16,12 +16,14 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
+    private static Registro registro;
+
     @Override
     public void init() throws Exception {
         System.out.println("||| INICIALIZANDO DATOS |||\n\n");
 
         // "Base de datos"
-        Registro registro = new Registro();
+        registro = new Registro();
 
         // Arreglo para almacenar los datos de los destinos dados en el enunciado.
         Destino[] destinos = new Destino[13];
@@ -49,12 +51,17 @@ public class App extends Application {
         modelosAviones[1] = new cl.aerochinquihue.model.Cessna208("CESSNA208 CARAVAN", 9, 1315, "C208C-1");
         modelosAviones[2] = new cl.aerochinquihue.model.Let410("LET410UVP-E20", 19, 1800, "LET420-1");
         
-        // Pruebas
+        // Pruebas //
+        // Vuelo
         Vuelo vueloPrueba = new Vuelo(destinos[0], modelosAviones[0], 26, 11, 2025, "08:00 AM");
 
+        registro.agregarVuelo(vueloPrueba);
+
+        System.out.println(registro.getRegistroVuelosEnPosicion(0).toString());
+
+        // Transporte
         Cliente clientePrueba = new Cliente("astras", "kevin");
         clientePrueba.solicitarPasaje(2, 26, 11, 2025, vueloPrueba, registro);
-        // clientePrueba.solicitarEncomienda(3, "kevin 2", vueloPrueba, 26, 11, 2025, registro);
 
         Asistente asistentePrueba = new Asistente("incorrecta", "clevin", "Clevin");
         asistentePrueba.calcularYEnviarPrecio(registro.getRegistroServicioEnPosicion(0), clientePrueba);
@@ -64,7 +71,19 @@ public class App extends Application {
         asistentePrueba.validarTransporte(registro.getRegistroServicioEnPosicion(0));
 
         System.out.println(registro.getRegistroServicioEnPosicion(0).toString());
-        // System.out.println(registro.getRegistroServicioEnPosicion(1).toString());
+
+        // Servicio
+        clientePrueba.solicitarEncomienda(5, "rordrigo", vueloPrueba, 26, 11, 2025, registro);
+
+        asistentePrueba.calcularYEnviarPrecio(registro.getRegistroServicioEnPosicion(1), clientePrueba);
+
+        clientePrueba.finalizarCompra(registro.getRegistroServicioEnPosicion(1), MedioPago.TRANSFERENCIA);
+
+        asistentePrueba.validarEncomienda(registro.getRegistroServicioEnPosicion(1));
+
+        // registro.getRegistroServicioEnPosicion(1).confirmarEntrega();
+
+        System.out.println(registro.getRegistroServicioEnPosicion(1));
     }
 
     @Override

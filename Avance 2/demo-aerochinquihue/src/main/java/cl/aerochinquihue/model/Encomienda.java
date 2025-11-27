@@ -20,12 +20,13 @@ public class Encomienda extends Servicio{
 
     @Override
     public double calcularPrecio(){
-        return this.peso*vueloAsignado.getDestino().getPrecioEncomiendaKg();
+        this.precio = this.peso*vueloAsignado.getDestino().getPrecioEncomiendaKg();
+        return this.precio;
     }
 
     @Override
     public String toString(){
-        return "|| SERVICIO: ENCOMIENDA ||\n\nID: " + this.id + "\nID del vuelo asignado: " + this.vueloAsignado.getId() + "\nPrecio: " + this.precio + "\nMedio de pago: " + this.pagoElegido + "\nFecha: " + fechaReserva.getDia() + "/" + fechaReserva.getMes() + "/" + fechaReserva.getAño() + "\nEstado: " + this.estadoServicio + "\nPeso: " + this.peso + "\nRemitente: " + this.remitente + "\n";
+        return "|| SERVICIO: ENCOMIENDA ||\n\nID: " + this.id + "\nID del vuelo asignado: " + this.vueloAsignado.getId() + "\nEmisor: " + this.cliente.getNombre() + "\nPrecio: $" + this.precio + "\nMedio de pago: " + this.pagoElegido + "\nFecha: " + fechaReserva.getDia() + "/" + fechaReserva.getMes() + "/" + fechaReserva.getAño() + "\nEstado: " + this.estadoServicio + "\nPeso: " + this.peso + "Kg.\nRemitente: " + this.remitente + "\n" + "Se entrego en el aerodromo: " + this.entregaInicial + "\n";
     }
 
     // Getters.

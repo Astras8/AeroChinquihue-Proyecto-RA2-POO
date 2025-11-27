@@ -64,6 +64,11 @@ public class Vuelo {
         return (calcularPesoOcupado() + peso <= this.avionAsignado.getPesoMaximo());
     }
 
+    @Override
+    public String toString(){
+        return "|| VUELO ||\n\nID: " + this.id + "\nDestino: " + destino.getNombre() + "\nAvion asignado: " + avionAsignado.getDesignacionSerie() + "\nFecha del vuelo: " + fechaVuelo.getDia() + "/" + fechaVuelo.getMes() + "/" + fechaVuelo.getAño() + "\nEstado: " + this.estado + "\nHorario de salida: " + this.horarioSalida + "\n";
+    }
+
     // Getters.
     public int getId(){
         return id;

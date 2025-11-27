@@ -12,6 +12,9 @@ public class Destino {
     }
 
     // Getters.
+    public String getNombre(){
+        return nombre;
+    }
     public double getPrecioTransporte() {
         return precioTransporte;
     }

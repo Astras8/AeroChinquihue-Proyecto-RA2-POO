@@ -22,7 +22,8 @@ public class Asistente extends Usuario {
         return true;
     }
 
-    public boolean validarEncomienda(){ // COMPLETAR.
+    public boolean validarEncomienda(Servicio servicio){ // COMPLETAR.
+        servicio.setEstadoServicio(EstadoServicio.APROBADO);
         return true;
     }
 }
