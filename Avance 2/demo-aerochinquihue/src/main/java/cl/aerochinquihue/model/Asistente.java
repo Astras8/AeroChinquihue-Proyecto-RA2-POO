@@ -17,7 +17,7 @@ public class Asistente extends Usuario {
         return precioServicio;
     }
 
-    public boolean validarTransporte(Transporte transporte){ // COMPLETAR.
+    public boolean validarTransporte(Transporte transporte){
         if (transporte.validarServicio()){
             transporte.setEstadoServicio(EstadoServicio.APROBADO);
             return true;
@@ -28,7 +28,7 @@ public class Asistente extends Usuario {
         }
     }
 
-    public boolean validarEncomienda(Encomienda encomienda){ // COMPLETAR.
+    public boolean validarEncomienda(Encomienda encomienda){
         if (encomienda.validarServicio()){
             encomienda.setEstadoServicio(EstadoServicio.APROBADO);
             return true;
@@ -37,5 +37,9 @@ public class Asistente extends Usuario {
             encomienda.setEstadoServicio(EstadoServicio.RECHAZADO);
             return false;
         }
+    }
+
+    public void registrarCliente(){
+        
     }
 }

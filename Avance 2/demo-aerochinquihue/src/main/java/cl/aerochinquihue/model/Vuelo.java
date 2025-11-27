@@ -24,7 +24,11 @@ public class Vuelo {
 
     // Métodos.
     public void cancelarVuelo(){
-        this.estado = EstadoVuelo.CANCELADO; // COMPLETAR
+        this.estado = EstadoVuelo.CANCELADO;
+        for (Servicio servicio: serviciosReservados){
+            servicio.setEstadoServicio(EstadoServicio.REASIGNANDO);
+            servicio.setVueloAsignado(null);
+        }
     }
 
     // Transportes.

@@ -80,6 +80,9 @@ public abstract class Servicio {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+    public void setVueloAsignado(Vuelo vuelo){
+        this.vueloAsignado = vuelo;
+    }
     public void setEstadoServicio(EstadoServicio estado) {
         this.estadoServicio = estado;
     }

@@ -25,7 +25,7 @@ public class Cliente extends Usuario {
             serviciosContratados.add(pasaje);
             System.out.println("Se agrego un servicio a la lista de servicios contratados del cliente: " + this.nombre + "\n");
         }
-        else System.out.println("lol\n");
+        else System.out.println("No hay asientos disponibles en el vuelo asignado.\n");
     }   
 
     public void solicitarEncomienda(double peso, String remitente, Vuelo vueloAsignado, int diaReserva, int mesReserva, int añoReserva, Registro registro){
@@ -35,7 +35,7 @@ public class Cliente extends Usuario {
             serviciosContratados.add(encomienda);
             System.out.println("Se ha enviado una solicitud de encomienda pendiente para aprobacion.\n");
         }
-        else System.out.println("lol\n");
+        else System.out.println("No se puede agregar una encomienda al vuelo asignado.\n");
     }
 
     public void finalizarCompra(Servicio servicio, MedioPago medioPago){
