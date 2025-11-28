@@ -2,10 +2,12 @@ c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\d
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\EstadoVuelo.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\View\Controller.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Gerente.java
+c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\LET410View.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Avion.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Usuario.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Asistente.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Cliente.java
+c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\PagoView.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Fecha.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\MedioPago.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\EstadoServicio.java
@@ -17,6 +19,9 @@ c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\d
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Let410.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\DestinosView.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Vuelo.java
+c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\AvionesView.java
+c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\CESSNA208View.java
+c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\CESSNA310View.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Cessna310.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\HorarioView.java
 c:\Users\Catalina\OneDrive\Escritorio\Ejercicios VSC\Java\ProyectoRA2\Avance 2\demo-aerochinquihue\src\main\java\cl\aerochinquihue\model\Transporte.java

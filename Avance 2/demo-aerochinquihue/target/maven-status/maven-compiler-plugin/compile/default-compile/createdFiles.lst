@@ -1,6 +1,8 @@
 cl\aerochinquihue\model\Avion.class
 cl\aerochinquihue\model\Cliente.class
+cl\aerochinquihue\View\Controller.class
 cl\aerochinquihue\model\Let410.class
+cl\aerochinquihue\ventanas.class
 cl\aerochinquihue\model\Cessna208.class
 cl\aerochinquihue\model\Encomienda.class
 cl\aerochinquihue\model\EstadoVuelo.class
@@ -10,10 +12,13 @@ cl\aerochinquihue\model\EstadoServicio.class
 cl\aerochinquihue\model\Cessna310.class
 cl\aerochinquihue\model\Fecha.class
 cl\aerochinquihue\model\Transporte.class
+cl\aerochinquihue\HorarioView.class
 cl\aerochinquihue\model\Usuario.class
 cl\aerochinquihue\model\MedioPago.class
 cl\aerochinquihue\model\Servicio.class
+cl\aerochinquihue\DestinosView.class
 cl\aerochinquihue\model\Gerente.class
+cl\aerochinquihue\View\Main.class
 cl\aerochinquihue\model\Asiento.class
 cl\aerochinquihue\model\Vuelo.class
 cl\aerochinquihue\model\Asistente.class

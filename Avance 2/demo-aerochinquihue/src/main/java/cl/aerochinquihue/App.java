@@ -91,9 +91,7 @@ public void start(Stage stage) throws IOException {
 
     System.out.println("||| INICIANDO METODO START |||\n\n");
 
-    // -------------------------
     // ELEMENTOS DEL FORMULARIO (VENTANA 1)
-    // -------------------------
 
     Label Inicio = new Label("Inicio de sesión\n");
     Inicio.setStyle("-fx-font-size: 18px;");
@@ -108,7 +106,7 @@ public void start(Stage stage) throws IOException {
 
     Button btnIngresar = new Button("Ingresar");
 
-    // Acción del botón Ingresar (cambia a ventana 2)
+    //Acción del botón Ingresar (cambia a ventana 2)
     btnIngresar.setOnAction(e -> {
 
         System.out.println("Usuario ingresado: " + txtUsuario.getText()); 
@@ -121,7 +119,10 @@ public void start(Stage stage) throws IOException {
         Button btnHorario = new Button("Horarios");
 
         btnHorario.setOnAction(h -> {
-            new HorarioView(stage).mostrar();
+            new HorarioView(stage, () -> {
+                new AvionesView(stage, false).mostrar();
+            }).mostrar();
+
         });
 
         btnReserva.setOnAction(r -> {
@@ -143,13 +144,14 @@ public void start(Stage stage) throws IOException {
             btnIngresar2.setOnAction(m -> new DestinosView(stage, true).mostrar());
 
 
+
             // Ventana 3
             VBox layout3 = new VBox(20);
             layout3.setPadding(new Insets(20));
             layout3.getChildren().addAll(label2, btnPasaje, Encomienda, txtEncomienda, btnIngresar2);
 
             // escena 3
-            Scene escena3 = new Scene(layout3, 400, 300);
+            Scene escena3 = new Scene(layout3,  700, 600);
             stage.setScene(escena3);
         });
 
@@ -158,22 +160,21 @@ public void start(Stage stage) throws IOException {
         layout2.setPadding(new Insets(20));
         layout2.getChildren().addAll(label, btnReserva, btnHorario);
 
-        Scene escena2 = new Scene(layout2, 400, 300);
+        Scene escena2 = new Scene(layout2, 700, 600);
 
         // escena 2
         stage.setScene(escena2);
     });
 
-    // -------------------------
     // LAYOUT VENTANA 1
-    // -------------------------
+
     VBox layout = new VBox(12);
     layout.setPadding(new Insets(20));
     layout.getChildren().addAll(
         Inicio, Usuario, txtUsuario, Contrasena, txtContrasena, btnIngresar
     );
 
-    Scene scene = new Scene(layout, 350, 250);
+    Scene scene = new Scene(layout,  700, 600);
 
     stage.setTitle("AeroChinquihue - Login");
     stage.setScene(scene);
