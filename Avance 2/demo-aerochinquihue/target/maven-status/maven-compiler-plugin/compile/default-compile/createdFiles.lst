@@ -1,9 +1,14 @@
 cl\aerochinquihue\model\Avion.class
 cl\aerochinquihue\model\Cliente.class
+<<<<<<< HEAD
 cl\aerochinquihue\controller\VuelosController.class
 cl\aerochinquihue\model\Let410.class
 cl\aerochinquihue\controller\LoginController.class
 cl\aerochinquihue\view\Main.class
+=======
+cl\aerochinquihue\View\Controller.class
+cl\aerochinquihue\model\Let410.class
+>>>>>>> 6a4e2213a4f769b65f08819e36fc730348a5f32c
 cl\aerochinquihue\ventanas.class
 cl\aerochinquihue\model\Cessna208.class
 cl\aerochinquihue\model\Encomienda.class
@@ -21,7 +26,11 @@ cl\aerochinquihue\model\MedioPago.class
 cl\aerochinquihue\model\Servicio.class
 cl\aerochinquihue\DestinosView.class
 cl\aerochinquihue\model\Gerente.class
+<<<<<<< HEAD
 cl\aerochinquihue\App.class
+=======
+cl\aerochinquihue\View\Main.class
+>>>>>>> 6a4e2213a4f769b65f08819e36fc730348a5f32c
 cl\aerochinquihue\model\Asiento.class
 cl\aerochinquihue\model\Vuelo.class
 cl\aerochinquihue\model\Asistente.class

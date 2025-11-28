@@ -27,7 +27,8 @@ public class DestinosView {
 
         String[] destinos = {
             "Cochamó", "Puelo Bajo", "Contao", "Rio Negro", "Pupelde", "Chepu",
-            "Ayacara", "Pillán", "Reñihue", "Isla Quenac", "Palqui", "Chaitén", "Santa Bárbara"
+            "Ayacara", "Pillán", "Reñihue", "Isla Quenac", "Palqui",
+            "Chaitén", "Santa Bárbara"
         };
 
         VBox lista = new VBox(10);
@@ -35,26 +36,28 @@ public class DestinosView {
         for (String d : destinos) {
             Button btn = new Button(d);
             Label info = new Label("Imagen + precio");
-            btn.setOnAction(e -> {
-            new HorarioView(stage).mostrar();
-            });
-
-            HBox fila = new HBox(10, btn, info);
 
             btn.setOnAction(e -> {
+
                 if (esEncomienda) {
                     System.out.println("Encomienda a " + d);
                 } else {
                     System.out.println("Pasaje a " + d);
                 }
+
+                // Abrir horarios y luego aviones
+                new HorarioView(stage, () -> {
+                    new AvionesView(stage, esEncomienda).mostrar();
+                }).mostrar();
             });
 
+            HBox fila = new HBox(10, btn, info);
             lista.getChildren().add(fila);
         }
 
         VBox layout = new VBox(15, titulo, subtitulo, lista);
         layout.setPadding(new Insets(20));
 
-        stage.setScene(new Scene(layout, 400, 600));
+        stage.setScene(new Scene(layout, 700, 600));
     }
 }
