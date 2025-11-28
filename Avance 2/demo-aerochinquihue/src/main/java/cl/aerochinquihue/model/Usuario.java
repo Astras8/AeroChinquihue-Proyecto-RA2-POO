@@ -8,4 +8,9 @@ public abstract class Usuario {
         this.usuario = usuario;
         this.nombre = nombre;
     }
+    //por si acaso
+    public String getUsuario() {
+        return usuario;
+    }
+    
 }
