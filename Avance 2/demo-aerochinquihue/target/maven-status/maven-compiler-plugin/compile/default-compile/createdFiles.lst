@@ -2,7 +2,6 @@ cl\aerochinquihue\model\Avion.class
 cl\aerochinquihue\model\Cliente.class
 cl\aerochinquihue\View\Controller.class
 cl\aerochinquihue\model\Let410.class
-cl\aerochinquihue\ventanas.class
 cl\aerochinquihue\model\Cessna208.class
 cl\aerochinquihue\model\Encomienda.class
 cl\aerochinquihue\model\EstadoVuelo.class
