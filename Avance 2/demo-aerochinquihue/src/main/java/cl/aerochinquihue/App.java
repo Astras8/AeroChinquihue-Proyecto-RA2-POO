@@ -2,12 +2,15 @@ package cl.aerochinquihue;
 
 import java.io.IOException;
 
+import cl.aerochinquihue.controller.Contexto;
 import cl.aerochinquihue.model.Asistente;
 import cl.aerochinquihue.model.Avion;
 import cl.aerochinquihue.model.Cliente;
 import cl.aerochinquihue.model.Destino;
+import cl.aerochinquihue.model.Gerente;
 import cl.aerochinquihue.model.MedioPago;
 import cl.aerochinquihue.model.Registro;
+import cl.aerochinquihue.model.Usuario;
 import cl.aerochinquihue.model.Vuelo;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -28,7 +31,7 @@ public class App extends Application {
     public void init() throws Exception {
         System.out.println("||| INICIALIZANDO DATOS |||\n\n");
 
-        // "Base de datos"
+        // "Base de datos" Falta añadir
         registro = new Registro();
 
         // Arreglo para almacenar los datos de los destinos dados en el enunciado.
@@ -58,6 +61,12 @@ public class App extends Application {
         modelosAviones[2] = new cl.aerochinquihue.model.Let410("LET410UVP-E20", 19, 1800, "LET420-1");
         
         // Pruebas
+        //esto de abajo deberia guardar esos datos para los controladores
+        Usuario[] listaPrueba = new Usuario[2];
+        listaPrueba[0] = new Asistente("123", "clevin", "Clevin");
+        listaPrueba[1] = new Gerente("1234","jefo","kovid");
+        Contexto.setUsuariosSistema(listaPrueba);
+
         Vuelo vueloPrueba = new Vuelo(destinos[0], modelosAviones[0], 26, 11, 2025, "08:00 AM");
 
         Cliente clientePrueba = new Cliente("astras", "kevin");

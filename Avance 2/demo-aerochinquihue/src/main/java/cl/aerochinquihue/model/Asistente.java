@@ -42,4 +42,9 @@ public class Asistente extends Usuario {
     public void registrarCliente(){
         
     }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+    
 }
