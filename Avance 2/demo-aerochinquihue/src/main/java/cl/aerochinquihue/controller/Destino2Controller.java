@@ -1,5 +1,5 @@
 package cl.aerochinquihue.controller;
 
-public class VuelosController {
+public class Destino2Controller {
     
 }

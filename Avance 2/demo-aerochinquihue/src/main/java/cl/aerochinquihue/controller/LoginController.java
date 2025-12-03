@@ -1,21 +1,27 @@
 package cl.aerochinquihue.controller;
 
+import java.io.IOException;
+
 import cl.aerochinquihue.model.Asistente;
+import cl.aerochinquihue.model.Gerente;
 import cl.aerochinquihue.model.Usuario;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-//Los controladores se intentaron hacer sin el "esqueleto de interfaz" de Scene builder por ende su funcionalidad es dudosa
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 public class LoginController {      
     
     @FXML private TextField txtUsuario;
     @FXML private PasswordField txtContraseña;
-    @FXML private Button botonIngresar;
+    @FXML private Button btnIngresar;
 
     //no estoy seguro si esto es necesario
     private void Alerta(String titulo, String mensaje){
@@ -24,18 +30,25 @@ public class LoginController {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-    //falta lo de las ventanas
-    private void ingresarSistema(Usuario u, String nombreArchivoFXML){
+    private void ingresarSistema(Usuario u, String nombreArchivoFXML, MouseEvent event){
         Contexto.setUsuarioActual(u);
 
         try{
-            //ventana que se busca
-        } catch (Exception e){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/cl/aerochinquihue/view/"+nombreArchivoFXML+".fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e){
             Alerta("Error", "No se pudo llevar a la ventana");
+            e.printStackTrace();
         }
     }
     @FXML
-    public void Login(ActionEvent event){
+    public void OnClick(MouseEvent event){
         String usuario = txtUsuario.getText();
         String contraseña = txtContraseña.getText();
 
@@ -45,22 +58,25 @@ public class LoginController {
         }
 
         Usuario[] usuarios = Contexto.getUsuarioSistema();
-        Boolean usuarioEncontrado = false;
 
-        if(usuarios != null){
-            for(int i = 0; i < usuarios.length; i++){
-                Usuario u = usuarios[i];
-
-                if (u != null && u.getUsuario().equals(usuarioEncontrado)){
-                    if(u instanceof Asistente){
-                        Asistente asiste = (Asistente) u;
-                        if(asiste.getContraseña().equals(contraseña));
-                        ingresarSistema(u, "menu");//en menu deberia ir el fxml del menu.
-                        usuarioEncontrado = true;
+        for(Usuario u : usuarios){
+            if(u != null && u.getUsuario().equals(usuario)){
+                if(u instanceof Asistente){
+                    Asistente asis = (Asistente) u;
+                    if (asis.getContraseña().equals(contraseña)){
+                        ingresarSistema(u, "VentanaInicio", event);
+                        return;
+                    }
+                }else if(u instanceof Gerente){
+                    Gerente gere = (Gerente) u;
+                    if (gere.getContraseña().equals(contraseña)){
+                        ingresarSistema(u, "VentanaInicioGerente", event);
+                        return;
                     }
                 }
+            }else{
+                Alerta("Error","Usuario o contraseña incorrectas");
             }
         }
     }
-}  
-    
+}   

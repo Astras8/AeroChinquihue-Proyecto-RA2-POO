@@ -25,4 +25,7 @@ public class Gerente extends Usuario{
     public void crearVueloExtraordinario(){
         
     }
+    public String getContraseña() {
+        return contraseña;
+    }
 }

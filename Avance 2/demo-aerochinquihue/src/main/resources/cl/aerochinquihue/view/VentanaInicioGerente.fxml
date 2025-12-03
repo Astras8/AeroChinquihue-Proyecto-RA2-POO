@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="btnReservar" layoutX="206.0" layoutY="164.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Reservar" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="17.0" />
+         </font>
+      </Button>
+      <Label fx:id="inicioBienvenida" layoutX="50.0" layoutY="84.0" text="¡Bienvenido a AeroChinquihue!" textFill="DARKBLUE">
+         <font>
+            <Font name="Franklin Gothic Demi" size="37.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomVentanaInicio" layoutX="35.0" layoutY="14.0" prefHeight="50.0" prefWidth="75.0" text="Inicio" textFill="DARKBLUE">
+         <font>
+            <Font name="Franklin Gothic Demi" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnHorario" layoutX="206.0" layoutY="218.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Horarios" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgHorario" fitHeight="32.0" fitWidth="35.0" layoutX="151.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../../../Downloads/calendario.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgAvion" fitHeight="32.0" fitWidth="32.0" layoutX="151.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../../../Downloads/plano-alt.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnRegistro" layoutX="207.0" layoutY="271.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Registros" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgRegistro" fitHeight="32.0" fitWidth="35.0" layoutX="151.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../../../Downloads/lista-del-portapapeles.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnCrearVuelo" layoutX="207.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Crear vuelo" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgCrearVuelo" fitHeight="43.0" fitWidth="46.0" layoutX="146.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../../../Downloads/viaje-en-avion.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

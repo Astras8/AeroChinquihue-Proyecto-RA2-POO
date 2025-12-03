@@ -8,24 +8,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.aerochinquihue.controller.ReservasController">
    <children>
       <Label fx:id="nomVentanaReservas" layoutX="73.0" layoutY="25.0" prefHeight="50.0" prefWidth="101.0" text="Reservas" textFill="DARKBLUE">
          <font>
             <Font name="Franklin Gothic Demi" size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="28.0" onMouseClicked="#OnClick" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/hogar.png" />
+            <Image url="@Imagenes/CasaInicio.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnReservarPasaje" layoutX="165.0" layoutY="127.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="271.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Reservar pasaje" textFill="WHITE">
+      <Button fx:id="btnReservarPasaje" layoutX="165.0" layoutY="127.0" mnemonicParsing="false" onAction="#Reserva" prefHeight="32.0" prefWidth="271.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Reservar pasaje" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnGuardarPeso" layoutX="165.0" layoutY="274.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="271.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Guardar peso" textFill="WHITE">
+      <Button fx:id="btnGuardarPeso" layoutX="165.0" layoutY="274.0" mnemonicParsing="false" onAction="#guardarpeso" prefHeight="32.0" prefWidth="271.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Guardar peso" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
@@ -37,12 +37,12 @@
       </Label>
       <ImageView fx:id="imgPasaje" fitHeight="40.0" fitWidth="40.0" layoutX="112.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/billete-de-avion.png" />
+            <Image url="@Imagenes/Boleto.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgEncomienda" fitHeight="40.0" fitWidth="40.0" layoutX="112.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/caja-de-paracaidas.png" />
+            <Image url="@Imagenes/Paquete.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtPesoEncomienda" layoutX="165.0" layoutY="224.0" prefHeight="32.0" prefWidth="271.0" promptText="Ingrese peso del paquete">

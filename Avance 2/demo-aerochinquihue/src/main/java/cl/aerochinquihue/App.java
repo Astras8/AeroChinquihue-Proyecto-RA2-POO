@@ -13,13 +13,9 @@ import cl.aerochinquihue.model.Registro;
 import cl.aerochinquihue.model.Usuario;
 import cl.aerochinquihue.model.Vuelo;
 import javafx.application.Application;
-import javafx.geometry.Insets;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -63,8 +59,8 @@ public class App extends Application {
         // Pruebas
         //esto de abajo deberia guardar esos datos para los controladores
         Usuario[] listaPrueba = new Usuario[2];
-        listaPrueba[0] = new Asistente("123", "clevin", "Clevin");
-        listaPrueba[1] = new Gerente("1234","jefo","kovid");
+        listaPrueba[0] = new Asistente("123", "AsistP", "Clevin");
+        listaPrueba[1] = new Gerente("1234","GerenteP","kovid");
         Contexto.setUsuariosSistema(listaPrueba);
 
         Vuelo vueloPrueba = new Vuelo(destinos[0], modelosAviones[0], 26, 11, 2025, "08:00 AM");
@@ -96,103 +92,24 @@ public class App extends Application {
     }
 
 @Override
-public void start(Stage stage) throws IOException {
+public void start(Stage primaryStage) throws IOException {
 
     System.out.println("||| INICIANDO METODO START |||\n\n");
-
-    // ELEMENTOS DEL FORMULARIO (VENTANA 1)
-
-    Label Inicio = new Label("Inicio de sesión\n");
-    Inicio.setStyle("-fx-font-size: 18px;");
-
-    Label Usuario = new Label("Usuario:");
-    TextField txtUsuario = new TextField();
-    txtUsuario.setPromptText("Ingrese su usuario");
-
-    Label Contrasena = new Label("Contraseña:");
-    PasswordField txtContrasena = new PasswordField();
-    txtContrasena.setPromptText("Ingrese su contraseña");
-
-    Button btnIngresar = new Button("Ingresar");
-
-    //Acción del botón Ingresar (cambia a ventana 2)
-    btnIngresar.setOnAction(e -> {
-
-        System.out.println("Usuario ingresado: " + txtUsuario.getText()); 
-        System.out.println("Contraseña ingresada: " + txtContrasena.getText());
-
-        Label label = new Label("¡Bienvenidos a AeroChinquihue!");
-        label.setStyle("-fx-font-size: 18px;");
-
-        Button btnReserva = new Button("Reservar");
-        Button btnHorario = new Button("Horarios");
-
-        btnHorario.setOnAction(h -> {
-            new HorarioView(stage, () -> {
-                new AvionesView(stage, false).mostrar();
-            }).mostrar();
-
-        });
-
-        btnReserva.setOnAction(r -> {
-
-            //Reservas
-            Label label2 = new Label("Reservas");
-            label2.setStyle("-fx-font-size: 18px;");
-            
-            Button btnPasaje = new Button("Reservar pasaje");
-
-            //Encomiendas
-            Label Encomienda = new Label("Encomienda:");
-            TextField txtEncomienda = new TextField();
-            txtEncomienda.setPromptText("Ingrese peso de encomienda");
-            Button btnIngresar2 = new Button("Ingresar");
-
-            btnPasaje.setOnAction(m -> new DestinosView(stage, false).mostrar());
-
-            btnIngresar2.setOnAction(m -> new DestinosView(stage, true).mostrar());
-
-
-
-            // Ventana 3
-            VBox layout3 = new VBox(20);
-            layout3.setPadding(new Insets(20));
-            layout3.getChildren().addAll(label2, btnPasaje, Encomienda, txtEncomienda, btnIngresar2);
-
-            // escena 3
-            Scene escena3 = new Scene(layout3,  700, 600);
-            stage.setScene(escena3);
-        });
-
-        // Ventana 2 
-        VBox layout2 = new VBox(20);
-        layout2.setPadding(new Insets(20));
-        layout2.getChildren().addAll(label, btnReserva, btnHorario);
-
-        Scene escena2 = new Scene(layout2, 700, 600);
-
-        // escena 2
-        stage.setScene(escena2);
-    });
-
-    // LAYOUT VENTANA 1
-
-    VBox layout = new VBox(12);
-    layout.setPadding(new Insets(20));
-    layout.getChildren().addAll(
-        Inicio, Usuario, txtUsuario, Contrasena, txtContrasena, btnIngresar
-    );
-
-    Scene scene = new Scene(layout,  700, 600);
-
-    stage.setTitle("AeroChinquihue - Login");
-    stage.setScene(scene);
-    stage.show();
-
     System.out.println(" || MOSTRANDO VENTANA ||\n\n");
+    
+    try{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cl/aerochinquihue/view/InicioSesion.fxml"));
+        Parent root = loader.load();
+        
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("AeroChinquihue | Inicio de sesion");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }catch(Exception e){
+        System.err.println("Error al cargar la ventana/fxml");
+        }
     }
-
-
 
     public static void main(String[] args) {
         System.out.println("||| INICIANDO APLICACION |||\n\n");
@@ -200,3 +117,5 @@ public void start(Stage stage) throws IOException {
         System.out.println("||| CERRANDO APLICACION |||\n\n");
     }
 }
+
+
