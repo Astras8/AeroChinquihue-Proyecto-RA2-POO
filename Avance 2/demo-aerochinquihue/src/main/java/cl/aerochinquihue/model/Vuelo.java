@@ -80,4 +80,12 @@ public class Vuelo {
     public Destino getDestino(){
         return destino;
     }
+    public Fecha getFechaVuelo(){
+        return fechaVuelo;
+    }
+
+    // Setters.
+    public void setEstadoVuelo(EstadoVuelo estado){
+        this.estado = estado;
+    }
 }
