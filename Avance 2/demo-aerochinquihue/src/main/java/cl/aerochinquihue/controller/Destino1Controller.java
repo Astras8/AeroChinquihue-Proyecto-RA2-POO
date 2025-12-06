@@ -60,6 +60,9 @@ public class Destino1Controller {
     }
     @FXML
     public void Siguiente(ActionEvent event){
+        Button botonref =(Button) event.getSource();
+        String botonid = botonref.getId();
+        
         CambiarVentana(event, "Destino2");
     }
 }

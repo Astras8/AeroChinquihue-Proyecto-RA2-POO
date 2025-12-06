@@ -15,6 +15,7 @@ cl\aerochinquihue\model\Avion.class
 cl\aerochinquihue\model\Cliente.class
 cl\aerochinquihue\controller\Controller.class
 cl\aerochinquihue\model\EstadoServicio.class
+cl\aerochinquihue\view\Controller.class
 cl\aerochinquihue\controller\InicioController.class
 cl\aerochinquihue\model\Fecha.class
 cl\aerochinquihue\controller\Contexto.class
