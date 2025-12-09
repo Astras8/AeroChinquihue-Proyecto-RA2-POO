@@ -52,6 +52,9 @@ public class Registro {
         if (posicion >= 0 && posicion < registroServicios.size()) return registroServicios.get(posicion);
         else return null;
     }
+    public ArrayList<Servicio> getRegistroServicios(){
+        return registroServicios;
+    }
     public Transporte getRegistroTransportesEnPosicion(int posicion){
         if (posicion >= 0 && posicion < registroTransportes.size()) return registroTransportes.get(posicion);
         else return null;
@@ -63,5 +66,8 @@ public class Registro {
     public Vuelo getRegistroVuelosEnPosicion(int posicion){
         if (posicion >= 0 && posicion < registroVuelos.size()) return registroVuelos.get(posicion);
         else return null;
+    }
+    public ArrayList<Vuelo> getRegistroVuelos(){
+        return registroVuelos;
     }
 }

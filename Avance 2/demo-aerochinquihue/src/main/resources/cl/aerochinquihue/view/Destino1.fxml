@@ -9,7 +9,7 @@
 
 <Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.aerochinquihue.controller.Destino1Controller">
    <children>
-      <Button fx:id="btnPueloBajo" layoutX="311.0" layoutY="87.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Puelo Bajo" textFill="WHITE">
+      <Button fx:id="btnPueloBajo" layoutX="311.0" layoutY="87.0" mnemonicParsing="false" onAction="#DestinoElegido" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Puelo Bajo" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
@@ -24,37 +24,37 @@
             <Image url="@Imagenes/CasaInicio.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnContao" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Contao" textFill="WHITE">
+      <Button fx:id="btnContao" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" onAction="#DestinoElegido" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Contao" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnCochamo" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Cochamó" textFill="WHITE">
+      <Button fx:id="btnCochamo" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" onAction="#DestinoElegido" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Cochamó" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnPalqui" layoutX="311.0" layoutY="254.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Palqui" textFill="WHITE">
+      <Button fx:id="btnPalqui" layoutX="311.0" layoutY="254.0" mnemonicParsing="false" onAction="#DestinoElegido" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Palqui" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnPillan" layoutX="311.0" layoutY="170.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Pillán" textFill="WHITE">
+      <Button fx:id="btnPillan" layoutX="311.0" layoutY="170.0" mnemonicParsing="false" onAction="#DestinoElegido" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Pillán" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnReñihue" layoutX="33.0" layoutY="337.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Reñihue" textFill="WHITE">
+      <Button fx:id="btnReñihue" layoutX="33.0" layoutY="337.0" mnemonicParsing="false" onAction="#DestinoElegido" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Reñihue" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnChepu" layoutX="33.0" layoutY="170.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Chepu" textFill="WHITE">
+      <Button fx:id="btnChepu" layoutX="33.0" layoutY="170.0" mnemonicParsing="false" onAction="#DestinoElegido" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Chepu" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnSiguiente" layoutX="443.0" layoutY="337.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Siguiente  --&gt;" textFill="WHITE">
+      <Button fx:id="btnSiguiente" layoutX="443.0" layoutY="337.0" mnemonicParsing="false" onAction="#Siguiente" prefHeight="32.0" prefWidth="124.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Siguiente  --&gt;" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
@@ -66,7 +66,7 @@
       </ImageView>
       <ImageView fx:id="imgPueloBajo" fitHeight="72.0" fitWidth="112.0" layoutX="452.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Pupelde.jpeg" />
+            <Image url="@Imagenes/Puelo.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="imgContao" fitHeight="72.0" fitWidth="112.0" layoutX="179.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
@@ -76,17 +76,17 @@
       </ImageView>
       <ImageView fx:id="imgReñihue" fitHeight="72.0" fitWidth="112.0" layoutX="180.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/RioNegro.jpg" />
+            <Image url="@Imagenes/Riñihue.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="imgChepu" fitHeight="72.0" fitWidth="112.0" layoutX="179.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Puelo.jpg" />
+            <Image url="@Imagenes/Chepu.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="imgPalqui" fitHeight="72.0" fitWidth="112.0" layoutX="449.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Ayacara.jpg" />
+            <Image url="@Imagenes/Palqui.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="imgPillan" fitHeight="72.0" fitWidth="112.0" layoutX="449.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">

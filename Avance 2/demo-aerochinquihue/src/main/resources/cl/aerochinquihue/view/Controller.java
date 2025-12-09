@@ -371,4 +371,67 @@ public class Controller {
     @FXML
     private TableView<?> tblHorario;
 
+     @FXML
+    private Button btnCrearVuelo;
+
+    @FXML
+    private ImageView imgAsiento;
+
+    @FXML
+    private ImageView imgDestino;
+
+    @FXML
+    private Label nomVentanaCrearVuelo;
+
+    @FXML
+    private Label subServicio;
+
+    @FXML
+    private TextField txtAsiento;
+
+    @FXML
+    private TextField txtAvion;
+
+    @FXML
+    private TextField txtDestino;
+
+    @FXML
+    private TextField txtEncomienda;
+
+    @FXML
+    private TextField txtHorario;
+
+    @FXML
+    private Button btnRegistro;
+
+    @FXML
+    private ImageView imgCrearVuelo;
+
+    @FXML
+    private ImageView imgRegistro;
+    
+    @FXML
+    private Label nomVentanaRegistros;
+
+    @FXML
+    private TableView<?> tblRegistros;
+
+    @FXML
+    private ImageView imgPersonaDatos12;
+
+    @FXML
+    private ImageView imgPrecio;
+
+    @FXML
+    private Label subDescuentoAplicado;
+
+    @FXML
+    private Label subPrecioTotal;
+
+    @FXML
+    private Label subPrecioVuelo;
+
+    @FXML
+    private TextField txtDescuento;
+
 }

@@ -16,12 +16,12 @@
       </Label>
       <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/hogar.png" />
+            <Image url="@Imagenes/CasaInicio.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgAsientosCessna310" fitHeight="291.0" fitWidth="574.0" layoutX="9.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/Captura_de_pantalla_2025-12-01_172857-removebg-preview-artguru.png" />
+            <Image url="@Imagenes/AsientosCESSNA310.png" />
          </image>
       </ImageView>
       <Button fx:id="btnAsiento1Cessna310" layoutX="328.0" layoutY="167.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="1" textFill="WHITE">

@@ -9,21 +9,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class Destino2Controller {
-    @FXML private Button btnAyacara;
-    @FXML private Button btnIslaQuenac;
-    @FXML private Button btnPupelde;
-    @FXML private Button btnRioNegro;
-    @FXML private Button btnChaiten;
-    @FXML private Button btnSantaBarbara;
-    @FXML private javafx.scene.image.ImageView btnVolverInicio;
-
+public class PagoController {
     private void Alerta(String titulo, String mensaje){
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+    private void AlertaConf(String titulo, String mensaje){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(titulo);
         alert.setContentText(mensaje);
         alert.showAndWait();
@@ -44,16 +40,9 @@ public class Destino2Controller {
         }
     }
     @FXML
-    public void OnClick(MouseEvent event){
-        CambiarVentana(new ActionEvent(event.getSource(), event.getTarget()),"VentanaInicio");
-    }
-    @FXML
-    public void DestinoElegido(ActionEvent event){
-        CambiarVentana(event, "HorarioEleg");
+    public void Final(ActionEvent event){
+        AlertaConf("Confirmación", "Su pedido queda pendiente a procesar");
+        CambiarVentana(event, "VentanaInicio");
     }
 
-    @FXML
-    public void Anterior(ActionEvent event){
-        CambiarVentana(event, "Destino1");
-    }
 }

@@ -29,6 +29,7 @@ public class App extends Application {
 
         // "Base de datos" Falta añadir
         registro = new Registro();
+        Contexto.setRegistro(registro);
 
         // Arreglo para almacenar los datos de los destinos dados en el enunciado.
         Destino[] destinos = new Destino[13];
@@ -56,6 +57,25 @@ public class App extends Application {
         modelosAviones[1] = new cl.aerochinquihue.model.Cessna208("CESSNA208 CARAVAN", 9, 1315, "C208C-1");
         modelosAviones[2] = new cl.aerochinquihue.model.Let410("LET410UVP-E20", 19, 1800, "LET420-1");
         
+        String[] horas = {"08:00","10:00","12:00","14:00","17:00"};
+
+        int destinoTemp = 0;
+        int avionTemp = 0;
+
+        //esta funcion de abajo es para ir haciendo vuelos con dias distintos, deberian ser de lunes a viernes
+        for(int i=0 ; i<=4 ; i++ ){
+            for(String hora : horas){
+                Destino d = destinos[destinoTemp % destinos.length];
+                Avion a = modelosAviones[avionTemp % modelosAviones.length];
+
+                Vuelo v = new Vuelo(d, a, i, 12, 2025, hora);
+                registro.agregarVuelo(v);
+
+                destinoTemp++;
+                avionTemp++;
+            }
+        }
+
         // Pruebas
         //esto de abajo deberia guardar esos datos para los controladores
         Usuario[] listaPrueba = new Usuario[2];

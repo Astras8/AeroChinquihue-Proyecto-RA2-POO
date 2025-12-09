@@ -13,15 +13,10 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class Destino2Controller {
-    @FXML private Button btnAyacara;
-    @FXML private Button btnIslaQuenac;
-    @FXML private Button btnPupelde;
-    @FXML private Button btnRioNegro;
-    @FXML private Button btnChaiten;
-    @FXML private Button btnSantaBarbara;
-    @FXML private javafx.scene.image.ImageView btnVolverInicio;
-
+public class HorarioElegController {
+    @FXML private Button tmpAvion;
+    @FXML private Button tmpPago;
+    
     private void Alerta(String titulo, String mensaje){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(titulo);
@@ -44,16 +39,15 @@ public class Destino2Controller {
         }
     }
     @FXML
+    public void tmpPago(ActionEvent event){
+        CambiarVentana(event, "Pago");
+    }
+    @FXML
+    public void tmpAvion(ActionEvent event){
+        CambiarVentana(event, "Cessna208");
+    }
+    @FXML
     public void OnClick(MouseEvent event){
         CambiarVentana(new ActionEvent(event.getSource(), event.getTarget()),"VentanaInicio");
-    }
-    @FXML
-    public void DestinoElegido(ActionEvent event){
-        CambiarVentana(event, "HorarioEleg");
-    }
-
-    @FXML
-    public void Anterior(ActionEvent event){
-        CambiarVentana(event, "Destino1");
     }
 }

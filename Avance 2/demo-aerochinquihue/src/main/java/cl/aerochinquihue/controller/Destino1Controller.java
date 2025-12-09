@@ -49,20 +49,22 @@ public class Destino1Controller {
     public void OnClick(MouseEvent event){
         CambiarVentana(new ActionEvent(event.getSource(), event.getTarget()),"VentanaInicio");
     }
-    private void disponibilidad(ActionEvent event){
+    //
+    /* private void disponibilidad(ActionEvent event){
         Button botonref = (Button) event.getSource();
         String botonId = botonref.getId();
 
         //falta la cosa pa ver la disponibilidad y las validaciones de los vuelos
-
+        
         //esto iria al final lol
         CambiarVentana(event, "Horario");
+    }*/
+    @FXML
+    public void DestinoElegido(ActionEvent event){
+        CambiarVentana(event, "HorarioEleg");
     }
     @FXML
     public void Siguiente(ActionEvent event){
-        Button botonref =(Button) event.getSource();
-        String botonid = botonref.getId();
-        
         CambiarVentana(event, "Destino2");
     }
 }

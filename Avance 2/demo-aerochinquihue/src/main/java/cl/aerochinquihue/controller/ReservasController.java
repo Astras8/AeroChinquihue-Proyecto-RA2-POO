@@ -60,7 +60,7 @@ public class ReservasController {
     }
     @FXML
     public void guardarpeso(ActionEvent event){
-        //falta directamente validar el peso
+        
         try{
             esEncomieda = true;
             CambiarVentana(event, "Destino1");
