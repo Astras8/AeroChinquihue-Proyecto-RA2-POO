@@ -2,6 +2,10 @@ package cl.aerochinquihue.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import cl.aerochinquihue.model.Asistente;
+import cl.aerochinquihue.model.Gerente;
+import cl.aerochinquihue.model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +40,14 @@ public class HorarioController {
     }
     @FXML
     public void OnClick(MouseEvent event){
-        CambiarVentana(new ActionEvent(event.getSource(), event.getTarget()),"VentanaInicio");
+        Usuario usuarioActual = Contexto.getUsuarioActual();
+        String Menu = "VentanaInicio";
+        
+        if(usuarioActual instanceof Gerente){
+            Menu = "VentanaInicioGerente";
+        }else if(usuarioActual instanceof Asistente){
+            Menu = "VentanaInicio";
+        }
+        CambiarVentana(new ActionEvent(event.getSource(), event.getTarget()), Menu);
     }
 }

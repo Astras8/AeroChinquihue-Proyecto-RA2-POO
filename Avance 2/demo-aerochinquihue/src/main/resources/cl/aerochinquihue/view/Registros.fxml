@@ -17,7 +17,7 @@
       </Label>
       <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/hogar.png" />
+            <Image url="@Imagenes/CasaInicio.png" />
          </image>
       </ImageView>
       <TableView fx:id="tblRegistros" layoutX="75.0" layoutY="78.0" prefHeight="261.0" prefWidth="449.0">

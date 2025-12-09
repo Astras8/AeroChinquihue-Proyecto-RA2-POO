@@ -2,6 +2,9 @@ package cl.aerochinquihue.controller;
 
 import java.io.IOException;
 
+import cl.aerochinquihue.model.Asistente;
+import cl.aerochinquihue.model.Gerente;
+import cl.aerochinquihue.model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,8 +44,15 @@ public class PagoController {
     }
     @FXML
     public void Final(ActionEvent event){
-        AlertaConf("Confirmación", "Su pedido queda pendiente a procesar");
-        CambiarVentana(event, "VentanaInicio");
-    }
+        Usuario usuarioActual = Contexto.getUsuarioActual();
+        String Menu = "VentanaInicio"; 
 
+        if(usuarioActual instanceof Gerente){
+            Menu = "VentanaInicioGerente";
+        }else if(usuarioActual instanceof Asistente){
+            Menu = "VentanaInicio";
+        }
+        AlertaConf("Confirmación", "Su pedido queda pendiente a procesar");
+        CambiarVentana(event, Menu);
+    }
 }
