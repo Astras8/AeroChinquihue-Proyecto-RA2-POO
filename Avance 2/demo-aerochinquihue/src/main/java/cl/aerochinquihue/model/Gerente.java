@@ -42,8 +42,11 @@ public class Gerente extends Usuario{
         Vuelo vueloExtraordinario = new Vuelo(destinoIngresado, avionIngresado, diaIngresado, mesIngresado, añoIngresado, horarioSalidaIngresado);
         registro.agregarVuelo(vueloExtraordinario);
         System.out.println("El gerente ha creado un vuelo extraordinario, asignado al registro de vuelos.");
+<<<<<<< HEAD
     }
     public String getContraseña() {
         return contraseña;
+=======
+>>>>>>> main
     }
 }
