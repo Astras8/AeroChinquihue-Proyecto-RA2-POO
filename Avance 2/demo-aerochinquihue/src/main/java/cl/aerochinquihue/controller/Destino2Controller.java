@@ -3,6 +3,7 @@ package cl.aerochinquihue.controller;
 import java.io.IOException;
 
 import cl.aerochinquihue.model.Asistente;
+import cl.aerochinquihue.model.Destino;
 import cl.aerochinquihue.model.Gerente;
 import cl.aerochinquihue.model.Usuario;
 import javafx.event.ActionEvent;
@@ -60,9 +61,17 @@ public class Destino2Controller {
     }
     @FXML
     public void DestinoElegido(ActionEvent event){
-        CambiarVentana(event, "HorarioEleg");
-    }
+        Button botonref = (Button) event.getSource();
+        String botonId = botonref.getId();
 
+        Destino destino = Contexto.buscarDestinoNombre(botonId);
+        if (destino != null){
+            Contexto.setDestinoElegido(destino);
+            CambiarVentana(event, "HorarioEleg");
+        }else{
+            Alerta("Error", "Destino no encontrado");
+        } 
+    }
     @FXML
     public void Anterior(ActionEvent event){
         CambiarVentana(event, "Destino1");

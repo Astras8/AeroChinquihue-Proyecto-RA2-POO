@@ -17,7 +17,7 @@
       </Label>
       <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/hogar.png" />
+            <Image url="@Imagenes/CasaInicio.png" />
          </image>
       </ImageView>
       <Button fx:id="btnDebito" layoutX="83.0" layoutY="132.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="114.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Debito" textFill="WHITE">
@@ -37,12 +37,12 @@
       </Label>
       <ImageView fx:id="imgMetodoPago" fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/tarjeta-de-credito.png" />
+            <Image url="@Imagenes/Pago.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgPersonaDatos" fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/gente-pic%20(1).png" />
+            <Image url="@Imagenes/Persona.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtNombreApellido" layoutX="83.0" layoutY="293.0" prefHeight="22.0" prefWidth="234.0" promptText="Ingrese nombre y apellidos">
@@ -82,7 +82,7 @@
       </Label>
       <ImageView fx:id="imgPersonaDatos1" fitHeight="32.0" fitWidth="32.0" layoutX="363.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/gastos.png" />
+            <Image url="@Imagenes/Precio.png" />
          </image>
       </ImageView>
    </children>

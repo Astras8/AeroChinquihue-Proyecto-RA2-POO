@@ -2,6 +2,9 @@ package cl.aerochinquihue.controller;
 
 import java.io.IOException;
 
+import cl.aerochinquihue.model.Asistente;
+import cl.aerochinquihue.model.Gerente;
+import cl.aerochinquihue.model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,15 +12,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class InicioController {
-    @FXML private Button btnHorario;
-    @FXML private Button btnReservar;
-
+public class PagoGerenteController {
     private void Alerta(String titulo, String mensaje){
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+    private void AlertaConf(String titulo, String mensaje){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(titulo);
         alert.setContentText(mensaje);
         alert.showAndWait();
@@ -31,29 +36,15 @@ public class InicioController {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }catch(IOException e){
-            Alerta("Error", "Error al cargar la ventana");
+
+        } catch (IOException e){
+            Alerta("Error", "No se pudo llevar a la ventana");
             e.printStackTrace();
         }
     }
     @FXML
-    public void Cambio(ActionEvent event){
-        Button botonref = (Button) event.getSource();
-        String idboton = botonref.getId();
-
-        switch(idboton){
-            case "btnHorario":
-                CambiarVentana(event, "Horario");
-                break;
-            case "btnReservar":
-                CambiarVentana(event, "Reservas");
-                break;
-            default:
-                Alerta("Error", "Fallo interno");
-        }
-    }
-    @FXML
-    public void Cerrar(ActionEvent event){
-        CambiarVentana(event, "InicioSesion");
+    public void Final(ActionEvent event){
+        AlertaConf("Confirmación", "Su pedido queda pendiente a procesar");
+        CambiarVentana(event, "VentanaInicioGerente");
     }
 }

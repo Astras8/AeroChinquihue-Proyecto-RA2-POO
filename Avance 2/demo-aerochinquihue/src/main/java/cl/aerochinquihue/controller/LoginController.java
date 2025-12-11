@@ -74,9 +74,9 @@ public class LoginController {
                         return;
                     }
                 }
-            }else{
-                Alerta("Error","Usuario o contraseña incorrectas");
-            }
+            }            
         }
+        Alerta("Error","Usuario o contraseña incorrectas");
     }
-}   
+}
+  

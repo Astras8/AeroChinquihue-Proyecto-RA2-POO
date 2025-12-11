@@ -3,7 +3,6 @@ package cl.aerochinquihue.controller;
 import java.io.IOException;
 
 import cl.aerochinquihue.model.Asistente;
-import cl.aerochinquihue.model.Destino;
 import cl.aerochinquihue.model.Gerente;
 import cl.aerochinquihue.model.Usuario;
 import javafx.event.ActionEvent;
@@ -13,21 +12,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class Destino1Controller {
-    @FXML private Button btnContao;
-    @FXML private Button btnCochamo;
-    @FXML private Button btnPalqui;
-    @FXML private Button btnPillan;
-    @FXML private Button btnReñihue;
-    @FXML private Button btnChepu;
-    @FXML private Button btnPueloBajo;
-    @FXML private Button btnSiguiente;
-    @FXML private javafx.scene.image.ImageView btnVolverInicio;
-
+public class RegistroController {
     private void Alerta(String titulo, String mensaje){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(titulo);
@@ -60,31 +48,5 @@ public class Destino1Controller {
             Menu = "VentanaInicio";
         }
         CambiarVentana(new ActionEvent(event.getSource(), event.getTarget()), Menu);
-    }
-    /* private void disponibilidad(ActionEvent event){
-        Button botonref = (Button) event.getSource();
-        String botonId = botonref.getId();
-
-        //falta la cosa pa ver la disponibilidad y las validaciones de los vuelos
-        
-        //esto iria al final lol
-        CambiarVentana(event, "Horario");
-    }*/
-    @FXML
-    public void DestinoElegido(ActionEvent event){
-        Button botonref = (Button) event.getSource();
-        String botonId = botonref.getId();
-
-        Destino destino = Contexto.buscarDestinoNombre(botonId);
-        if (destino != null){
-            Contexto.setDestinoElegido(destino);
-            CambiarVentana(event, "HorarioEleg");
-        }else{
-            Alerta("Error", "Destino no encontrado");
-        }  
-    }
-    @FXML
-    public void Siguiente(ActionEvent event){
-        CambiarVentana(event, "Destino2");
     }
 }

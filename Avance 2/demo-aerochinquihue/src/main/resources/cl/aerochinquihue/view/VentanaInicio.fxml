@@ -9,7 +9,7 @@
 
 <Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.aerochinquihue.controller.InicioController">
    <children>
-      <Button fx:id="btnReservar" layoutX="207.0" layoutY="200.0" mnemonicParsing="false" onAction="#Cambio" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Reservar" textFill="WHITE">
+      <Button fx:id="btnReservar" layoutX="208.0" layoutY="200.0" mnemonicParsing="false" onAction="#Cambio" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Reservar" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
@@ -39,5 +39,10 @@
             <Image url="@Imagenes/Avion.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnCerrarSesion" layoutX="455.0" layoutY="23.0" mnemonicParsing="false" onAction="#Cerrar" prefHeight="32.0" prefWidth="123.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Cerrar sesión" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="17.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

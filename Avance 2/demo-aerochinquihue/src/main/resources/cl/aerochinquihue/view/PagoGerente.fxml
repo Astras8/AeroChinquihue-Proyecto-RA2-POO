@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.aerochinquihue.controller.PagoGerenteController">
    <children>
       <Label fx:id="nomVentanaPago" layoutX="73.0" layoutY="25.0" prefHeight="50.0" prefWidth="101.0" text="Pago" textFill="DARKBLUE">
          <font>
@@ -17,7 +17,7 @@
       </Label>
       <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/hogar.png" />
+            <Image url="@Imagenes/CasaInicio.png" />
          </image>
       </ImageView>
       <Button fx:id="btnDebito" layoutX="83.0" layoutY="132.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="114.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Debito" textFill="WHITE">
@@ -25,7 +25,7 @@
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnPagar" layoutX="424.0" layoutY="311.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="114.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Pagar" textFill="WHITE">
+      <Button fx:id="btnPagar" layoutX="424.0" layoutY="311.0" mnemonicParsing="false" onAction="#Final" prefHeight="32.0" prefWidth="114.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Pagar" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>
@@ -37,12 +37,12 @@
       </Label>
       <ImageView fx:id="imgMetodoPago" fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/tarjeta-de-credito.png" />
+            <Image url="@Imagenes/Pago.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgPersonaDatos" fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/gente-pic%20(1).png" />
+            <Image url="@Imagenes/Persona.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtNombreApellido" layoutX="83.0" layoutY="293.0" prefHeight="22.0" prefWidth="234.0" promptText="Ingrese nombre y apellidos">
@@ -82,7 +82,7 @@
       </Label>
       <ImageView fx:id="imgPersonaDatos1" fitHeight="32.0" fitWidth="32.0" layoutX="359.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/gastos.png" />
+            <Image url="@Imagenes/Precio.png" />
          </image>
       </ImageView>
       <Label fx:id="subDescuentoAplicado" layoutX="403.0" layoutY="148.0" prefHeight="32.0" prefWidth="158.0" text="Descuento aplicado:" textFill="DARKBLUE">
@@ -107,12 +107,12 @@
       </Label>
       <ImageView fx:id="imgPrecio" fitHeight="32.0" fitWidth="32.0" layoutX="359.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/circulo-usd.png" />
+            <Image url="@Imagenes/Precio.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgPersonaDatos12" fitHeight="32.0" fitWidth="32.0" layoutX="359.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/descuento.png" />
+            <Image url="@Imagenes/Descuento.png" />
          </image>
       </ImageView>
    </children>

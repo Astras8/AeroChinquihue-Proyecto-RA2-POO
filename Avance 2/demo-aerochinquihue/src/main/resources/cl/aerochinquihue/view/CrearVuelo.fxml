@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.aerochinquihue.controller.CrearVueloController">
    <children>
       <Label fx:id="nomVentanaCrearVuelo" layoutX="63.0" layoutY="15.0" prefHeight="50.0" prefWidth="126.0" text="Crear vuelo" textFill="DARKBLUE">
          <font>
             <Font name="Franklin Gothic Demi" size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnVolverInicio" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="18.0" onMouseClicked="#OnClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagenes/CasaInicio.png" />
          </image>
@@ -31,7 +31,7 @@
          </font>
       </TextField>
       <TextField fx:id="txtHorario" alignment="CENTER" layoutX="88.0" layoutY="212.0" prefHeight="32.0" prefWidth="185.0" promptText="Ingrese horario" />
-      <Button fx:id="btnCrearVuelo" layoutX="208.0" layoutY="289.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Crear vuelo" textFill="WHITE">
+      <Button fx:id="btnCrearVuelo" layoutX="208.0" layoutY="289.0" mnemonicParsing="false" onAction="#Siguiente" prefHeight="25.0" prefWidth="185.0" style="-fx-background-radius: 20; -fx-background-color: #00008B;" text="Crear vuelo" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="17.0" />
          </font>

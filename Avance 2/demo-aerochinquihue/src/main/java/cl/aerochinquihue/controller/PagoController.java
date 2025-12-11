@@ -52,7 +52,7 @@ public class PagoController {
         }else if(usuarioActual instanceof Asistente){
             Menu = "VentanaInicio";
         }
-        AlertaConf("Confirmación", "Su pedido queda pendiente a procesar");
+        AlertaConf("Confirmacion", "Servicio Pendiente a procesar");
         CambiarVentana(event, Menu);
     }
 }

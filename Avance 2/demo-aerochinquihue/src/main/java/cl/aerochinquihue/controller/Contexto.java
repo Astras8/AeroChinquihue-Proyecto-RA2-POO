@@ -15,6 +15,8 @@ public class Contexto { //nombre temporal
 
     private static Destino destinoElegido;
 
+    private static Destino[] destinosBase;
+
     //se supone que esto debe recibir los datos del arreglo
     public static void setUsuariosSistema(Usuario[] usuarios){
         usuarioSistema = usuarios;
@@ -41,8 +43,24 @@ public class Contexto { //nombre temporal
     public static void setDestinoElegido(Destino destino){
         destinoElegido = destino;
     }
-
     public static Destino getDestinoElegido(){
         return destinoElegido;
+    }
+
+    public static void setdestinosBase(Destino[] destinos){
+        destinosBase = destinos;
+    }
+    public static Destino[] getdestinoBase(){
+        return destinosBase;
+    }
+    public static Destino buscarDestinoNombre(String nombre){
+        if(destinosBase == null){
+            return null;
+        }for (Destino d : destinosBase) {
+            if(d.getNombre().equals(nombre)){
+            return d;
+            }
+        }
+        return null;
     }
 }

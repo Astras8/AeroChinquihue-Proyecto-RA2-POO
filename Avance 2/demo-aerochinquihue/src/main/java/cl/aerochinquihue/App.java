@@ -49,6 +49,7 @@ public class App extends Application {
         destinos[11] = new Destino("Chaitén", 50000, 15000);
         destinos[12] = new Destino("Santa Bárbara", 50000, 15000);
 
+        Contexto.setdestinosBase(destinos);
         // Arreglo para almacenar los tipos de aviones dados en el enunciado.
         Avion[] modelosAviones = new Avion[3];
 
@@ -57,7 +58,7 @@ public class App extends Application {
         modelosAviones[1] = new cl.aerochinquihue.model.Cessna208("CESSNA208 CARAVAN", 9, 1315, "C208C-1");
         modelosAviones[2] = new cl.aerochinquihue.model.Let410("LET410UVP-E20", 19, 1800, "LET420-1");
         
-        String[] horas = {"08:00","10:00","12:00","14:00","17:00"};
+        /*String[] horas = {"08:00","10:00","12:00","14:00","17:00"};
 
         int destinoTemp = 0;
         int avionTemp = 0;
@@ -74,7 +75,7 @@ public class App extends Application {
                 destinoTemp++;
                 avionTemp++;
             }
-        }
+        }*/
 
         // Pruebas
         //esto de abajo deberia guardar esos datos para los controladores

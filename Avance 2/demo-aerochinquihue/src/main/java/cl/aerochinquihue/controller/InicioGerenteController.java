@@ -50,8 +50,13 @@ public class InicioGerenteController {
                 break;
             case "btnCrearVuelo":
                 CambiarVentana(event, "CrearVUelo");
+                break;
             default:
                 Alerta("Error", "Fallo interno");
         }
+    }
+    @FXML
+    public void Cerrar(ActionEvent event){
+        CambiarVentana(event, "InicioSesion");
     }
 }

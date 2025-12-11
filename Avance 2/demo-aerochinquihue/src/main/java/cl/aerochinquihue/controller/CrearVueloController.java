@@ -9,12 +9,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class InicioController {
-    @FXML private Button btnHorario;
-    @FXML private Button btnReservar;
+public class CrearVueloController {
 
     private void Alerta(String titulo, String mensaje){
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -31,29 +29,18 @@ public class InicioController {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }catch(IOException e){
-            Alerta("Error", "Error al cargar la ventana");
+
+        } catch (IOException e){
+            Alerta("Error", "No se pudo llevar a la ventana");
             e.printStackTrace();
         }
     }
     @FXML
-    public void Cambio(ActionEvent event){
-        Button botonref = (Button) event.getSource();
-        String idboton = botonref.getId();
-
-        switch(idboton){
-            case "btnHorario":
-                CambiarVentana(event, "Horario");
-                break;
-            case "btnReservar":
-                CambiarVentana(event, "Reservas");
-                break;
-            default:
-                Alerta("Error", "Fallo interno");
-        }
+    public void OnClick(MouseEvent event){
+        CambiarVentana(new ActionEvent(event.getSource(), event.getTarget()),"VentanaInicioGerente");
     }
     @FXML
-    public void Cerrar(ActionEvent event){
-        CambiarVentana(event, "InicioSesion");
+    public void Siguiente(ActionEvent event){
+        CambiarVentana(event,"PagoGerente");
     }
 }
