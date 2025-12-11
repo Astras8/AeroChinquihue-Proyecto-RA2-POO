@@ -61,7 +61,7 @@ public class Destino2Controller {
     }
     @FXML
     public void DestinoElegido(ActionEvent event){
-        Button botonref = (Button) event.getSource();
+        /*Button botonref = (Button) event.getSource();
         String botonId = botonref.getId();
 
         Destino destino = Contexto.buscarDestinoNombre(botonId);
@@ -70,7 +70,8 @@ public class Destino2Controller {
             CambiarVentana(event, "HorarioEleg");
         }else{
             Alerta("Error", "Destino no encontrado");
-        } 
+        }*/
+        CambiarVentana(event, "HorarioEleg"); 
     }
     @FXML
     public void Anterior(ActionEvent event){
